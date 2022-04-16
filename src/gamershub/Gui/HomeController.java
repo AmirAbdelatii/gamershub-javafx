@@ -7,8 +7,10 @@ package gamershub.Gui;
 
 import gamershub.Entities.User;
 import gamershub.Gamershub;
+import gamershub.Services.UserService;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,8 +34,6 @@ import javafx.scene.layout.Pane;
 public class HomeController implements Initializable {
 
     @FXML
-    private Pane pnlOverview;
-    @FXML
     private AnchorPane anchorPane;
     @FXML
     private Button btnOverview;
@@ -53,6 +53,10 @@ public class HomeController implements Initializable {
     private ImageView userImage;
     @FXML
     private Label usernameLabel;
+    @FXML
+    private Label titleLabel;
+    @FXML
+    private Pane mainContent;
 
     /**
      * Initializes the controller class.
@@ -74,6 +78,17 @@ public class HomeController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else if (event.getSource() == btnUsers) {
+            titleLabel.setText("Users");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("UsersFormContent.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
         }
     }
 

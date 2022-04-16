@@ -10,12 +10,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeController">
    <children>
       <StackPane layoutX="258.0" prefHeight="670.0" prefWidth="945.0" style="-fx-background-color: #02030A;">
          <children>
-            <Pane fx:id="pnlOverview" prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:/C:/Users/bouza/OneDrive/Bureau/RestaurantMgtSampleUI-master/src/images/banner-bg.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;" />
+            <Pane prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:/C:/Users/bouza/OneDrive/Bureau/RestaurantMgtSampleUI-master/src/images/banner-bg.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
+               <children>
+                  <Label fx:id="titleLabel" layoutX="63.0" layoutY="47.0" text="Title" textFill="#f8f8f8">
+                     <font>
+                        <Font name="Segoe UI" size="36.0" />
+                     </font>
+                  </Label>
+                  <Line endX="719.0" layoutX="181.0" layoutY="99.0" startX="-135.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Pane fx:id="mainContent" layoutX="45.0" layoutY="113.0" prefHeight="530.0" prefWidth="832.0" />
+               </children></Pane>
          </children>
       </StackPane>
       <VBox alignment="TOP_CENTER" prefHeight="670.0" prefWidth="256.0" style="-fx-background-color: #05071F;">
@@ -65,7 +76,7 @@
             </Button>
             <Button fx:id="btnGames" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Games">
                <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" style="-fx-color: green;">
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-controller-32.png" />
                      </image>
