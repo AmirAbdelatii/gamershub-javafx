@@ -57,6 +57,8 @@ public class HomeController implements Initializable {
     private Label titleLabel;
     @FXML
     private Pane mainContent;
+    @FXML
+    private Button addBtn;
 
     /**
      * Initializes the controller class.
@@ -69,11 +71,13 @@ public class HomeController implements Initializable {
 
     public void changePage(String title, Parent node) {
         titleLabel.setText(title);
+        addBtn.setVisible(false);
         mainContent.getChildren().removeAll(mainContent.getChildren());
         mainContent.getChildren().add(node);
     }
 
     public void changePage(String state) {
+        addBtn.setVisible(false);
         if (state.equals("users")) {
             titleLabel.setText("Users");
             try {
@@ -85,6 +89,7 @@ public class HomeController implements Initializable {
             }
         } else if (state.equals("games")) {
             titleLabel.setText("Games");
+            addBtn.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("GamesContentForm.fxml"));
                 Parent root = loader.load();
@@ -98,6 +103,7 @@ public class HomeController implements Initializable {
     @FXML
     private void handleClicks(ActionEvent event) {
         mainContent.getChildren().removeAll(mainContent.getChildren());
+        addBtn.setVisible(false);
         if (event.getSource() == btnSignout) {
             Gamershub.loggedUser = new User();
             try {
@@ -120,6 +126,7 @@ public class HomeController implements Initializable {
 
         } else if (event.getSource() == btnGames) {
             titleLabel.setText("Games");
+            addBtn.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("GamesContentForm.fxml"));
                 Parent root = loader.load();
@@ -131,6 +138,24 @@ public class HomeController implements Initializable {
 
         } else {
             System.out.println(event.getSource());
+        }
+    }
+
+    @FXML
+    private void addClick(ActionEvent event) {
+        if(titleLabel.getText().equals("Games")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Game - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("GameEditForm.fxml"));
+                Parent root = loader.load();
+                GameEditFormController cont = loader.getController();
+                cont.setAdd();
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
         }
     }
 

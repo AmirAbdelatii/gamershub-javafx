@@ -45,6 +45,7 @@ public class GameEditFormController implements Initializable {
     private Button delete;
     @FXML
     private Button cancel;
+    
     private String oldName;
 
     public void setImage(String url) {
@@ -59,6 +60,11 @@ public class GameEditFormController implements Initializable {
         this.title.setText(title);
         oldName = title;
     }
+    
+    public void setAdd(){
+        update.setText("Add");
+        delete.setVisible(false);
+    }
 
     /**
      * Initializes the controller class.
@@ -72,13 +78,28 @@ public class GameEditFormController implements Initializable {
     private void handleClicks(ActionEvent event) {
         if(event.getSource() == update){
             GameService gs = new GameService();
-            try {
-                Game game = gs.getGame(oldName);
-                game.setName(title.getText());
-                game.setDescription(description.getText());
-                gs.update(game);
-            } catch (SQLException ex) {
-                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+            if(update.getText()!= "Add"){
+                try {
+                    Game game = gs.getGame(oldName);
+                    game.setName(title.getText());
+                    game.setDescription(description.getText());
+                    gs.update(game);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            else{
+                try {
+                    Game game = new Game(title.getText(), "0f41a1cd370216e64efc0fbf18204b21.jpg", description.getText());
+                    gs.ajouter(game);
+                    FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
+                    Parent homeRoot = homeLoader.load();
+                    HomeController homeCtrl = homeLoader.getController();
+                    homeCtrl.changePage("games");
+                    title.getScene().setRoot(homeRoot);
+                } catch (Exception ex) {
+                    Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         if(event.getSource() == delete){
@@ -93,7 +114,7 @@ public class GameEditFormController implements Initializable {
                 Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        else {
+        else if (event.getSource() == cancel){
             try {
                 FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
                 Parent homeRoot = homeLoader.load();
