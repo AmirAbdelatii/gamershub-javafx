@@ -134,5 +134,37 @@ public class UserService implements IService<User> {
             return false;
         }
     }
+    
+    public User getUser(String username) throws SQLException {
+        String req = "Select * from `user` where username = '"+username+"';";
+        stm = con.createStatement();
+        ResultSet result = stm.executeQuery(req);
+        User u = new User();
+        while (result.next()) {
+            u = new User(result.getInt(1), result.getString("username"), result.getString("password"), result.getString("roles"), result.getInt("is_enabled"), result.getInt("coins"), result.getInt("is_verified"), result.getInt("oauth"), result.getString("email"), result.getString("name"), result.getString("second_name"), result.getDate("created_at"), result.getDate("last_updated"), result.getDate("birth_date"));
+        }
+        return u;
+    }
+    
+    public void updateNoPass(User user) throws SQLException {
+        String req = "UPDATE `user` SET " +
+            " `roles` = '"+user.getRole()+"', " +
+            " `email` = '"+user.getEmail()+"', " +
+            " `name` = '"+user.getName()+"', " +
+            " `second_name` = '"+user.getSecondName()+"', " +
+            " `birth_date` = '"+user.getBirthDate()+"', " +
+            " `last_updated` = CURRENT_TIMESTAMP, " +
+            " `is_enabled` = '"+user.getIsEnabled()+"', " +
+            " `coins` = '"+user.getCoins()+"', " +
+            " `is_verified` = '"+user.getIsVerified()+"' " +
+            "WHERE `username` = '"+user.getUsername()+"'";
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
 
+    public void deleteByUsername(String username) throws SQLException {
+        String req = "DELETE FROM `user` WHERE `username` = \""+username+"\"; ";
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
 }

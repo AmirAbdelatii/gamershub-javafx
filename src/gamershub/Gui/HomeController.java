@@ -67,8 +67,29 @@ public class HomeController implements Initializable {
         userImage.setImage(new Image("https://avatars.dicebear.com/api/bottts/" + Gamershub.loggedUser.getUsername() + ".png"));
     }
 
+    public void changePage(String title, Parent node) {
+        titleLabel.setText(title + " - Profile");
+        mainContent.getChildren().removeAll(mainContent.getChildren());
+        mainContent.getChildren().add(node);
+    }
+
+    public void changePage(String state) {
+        if (state.equals("users")) {
+            titleLabel.setText("Users");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("UsersFormContent.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+
     @FXML
     private void handleClicks(ActionEvent event) {
+        mainContent.getChildren().removeAll(mainContent.getChildren());
         if (event.getSource() == btnSignout) {
             Gamershub.loggedUser = new User();
             try {
@@ -89,6 +110,9 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
 
+        }
+        else{
+            System.out.println(event.getSource());
         }
     }
 
