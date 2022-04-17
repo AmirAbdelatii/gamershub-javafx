@@ -68,7 +68,7 @@ public class HomeController implements Initializable {
     }
 
     public void changePage(String title, Parent node) {
-        titleLabel.setText(title + " - Profile");
+        titleLabel.setText(title);
         mainContent.getChildren().removeAll(mainContent.getChildren());
         mainContent.getChildren().add(node);
     }
@@ -80,7 +80,15 @@ public class HomeController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("UsersFormContent.fxml"));
                 Parent root = loader.load();
                 mainContent.getChildren().add(root);
-
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else if (state.equals("games")) {
+            titleLabel.setText("Games");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("GamesContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
@@ -110,8 +118,18 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
 
-        }
-        else{
+        } else if (event.getSource() == btnGames) {
+            titleLabel.setText("Games");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("GamesContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        } else {
             System.out.println(event.getSource());
         }
     }

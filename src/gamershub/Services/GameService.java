@@ -68,10 +68,27 @@ public class GameService implements IService<Game>{
     public void update(Game game) throws SQLException {
         String req = "UPDATE `game` SET " +
             " `name` = '"+game.getName()+"', " +
-            " `description` = '"+game.getImage()+"', " +
-            " `image` = '"+game.getDescription()+"', " +
+            " `description` = '"+game.getDescription()+"', " +
+            " `image` = '"+game.getImage()+"', " +
             " `updated_at` = CURRENT_TIMESTAMP " +
             "WHERE `id` = "+game.getId();
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
+    
+    public Game getGame(String gameName) throws SQLException {
+        String req = "Select * from `game` where name = '"+gameName+"'";
+        stm = con.createStatement();
+        ResultSet result = stm.executeQuery(req);
+        Game g = new Game();
+        while (result.next()) {
+            g = new Game(result.getInt("id"),result.getString("name"),result.getString("image"),result.getString("description"),result.getDate("created_at"),result.getDate("updated_at"));
+        }
+        return g;
+    }
+    
+    public void deleteByName(String name) throws SQLException {
+        String req = "DELETE FROM `game` WHERE `name` = \""+name+"\"; ";
         stm = con.createStatement();
         stm.executeUpdate(req);
     }

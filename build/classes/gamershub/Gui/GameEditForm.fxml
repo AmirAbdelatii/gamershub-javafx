@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.GameEditFormController">
+   <children>
+      <ImageView fx:id="image" fitHeight="337.0" fitWidth="253.0" layoutX="53.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/a6b28695cda60cae2e370318a31b3627.jpg" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="description" layoutX="371.0" layoutY="196.0" prefHeight="208.0" prefWidth="389.0" />
+      <Label layoutX="370.0" layoutY="168.0" text="Description" />
+      <TextField fx:id="title" layoutX="371.0" layoutY="109.0" prefHeight="31.0" prefWidth="264.0" />
+      <Label layoutX="370.0" layoutY="81.0" text="Title" />
+      <Button fx:id="update" layoutX="286.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleClicks" text="Update" />
+      <Button fx:id="delete" layoutX="376.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleClicks" text="Delete" />
+      <Button fx:id="cancel" layoutX="464.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleClicks" text="Cancel" />
+   </children>
+</AnchorPane>

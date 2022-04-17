@@ -51,8 +51,6 @@ public class UsersCardFormController implements Initializable {
 
     @FXML
     private void viewClick(ActionEvent event) {
-        Parent mainContainer = userImage.getParent();
-//        mainContainer.getChildrenUnmodifiable().removeAll();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileEditForm.fxml"));
         try {
             User user = new UserService().getUser(username.getText());
@@ -60,7 +58,8 @@ public class UsersCardFormController implements Initializable {
             Parent root = loader.load();
             ProfileEditFormController cont = loader.getController();
             cont.setAdmin(user.getRole().equals("[\"ROLE_ADMIN\"]"));
-            cont.setBirthdate(user.getBirthDate());
+            if (user.getBirthDate()!=null)
+                cont.setBirthdate(user.getBirthDate());
             cont.setCoins(user.getCoins());
             cont.setEmail(user.getEmail());
             cont.setEnabled(user.getIsEnabled() == 1);
@@ -73,7 +72,7 @@ public class UsersCardFormController implements Initializable {
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Parent homeRoot = homeLoader.load();
             HomeController homeCtrl = homeLoader.getController();
-            homeCtrl.changePage(user.getUsername(),root);
+            homeCtrl.changePage(user.getUsername()+" - Profile",root);
             username.getScene().setRoot(homeRoot);
             
         } catch (Exception ex) {

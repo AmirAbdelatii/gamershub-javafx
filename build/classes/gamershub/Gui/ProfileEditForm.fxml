@@ -25,7 +25,7 @@
                <children>
                   <VBox>
                      <children>
-                        <Label text="Username" />
+                        <Label text="Username" textFill="#f5f5f5" />
                         <TextField fx:id="username" />
                      </children>
                      <VBox.margin>
@@ -34,7 +34,7 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="Email" />
+                        <Label text="Email" textFill="#f5f5f5" />
                         <TextField fx:id="email" />
                      </children>
                      <VBox.margin>
@@ -43,7 +43,7 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="Name">
+                        <Label text="Name" textFill="#f5f5f5">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -56,7 +56,7 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="Second Name" />
+                        <Label text="Second Name" textFill="#f5f5f5" />
                         <TextField fx:id="secondName" />
                      </children>
                      <VBox.margin>
@@ -72,7 +72,7 @@
                <children>
                   <VBox>
                      <children>
-                        <Label text="Birthdate" />
+                        <Label text="Birthdate" textFill="#f5f5f5" />
                         <DatePicker fx:id="birthdate" />
                      </children>
                      <VBox.margin>
@@ -81,24 +81,24 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="Coins" />
+                        <Label text="Coins" textFill="#f5f5f5" />
                         <TextField fx:id="coins" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </VBox>
-                  <CheckBox fx:id="enabled" mnemonicParsing="false" text="Enabled">
+                  <CheckBox fx:id="enabled" mnemonicParsing="false" text="Enabled" textFill="#f5f5f5">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox fx:id="admin" mnemonicParsing="false" text="Admin">
+                  <CheckBox fx:id="admin" mnemonicParsing="false" text="Admin" textFill="#f5f5f5">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox fx:id="verified" mnemonicParsing="false" text="Verified">
+                  <CheckBox fx:id="verified" mnemonicParsing="false" text="Verified" textFill="#f5f5f5">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
