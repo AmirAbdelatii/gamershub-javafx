@@ -24,4 +24,13 @@ public class Validations {
             return false;
         return pat.matcher(email).matches();
     }
+    public static boolean isNumberValid(String number)
+    {
+        String emailRegex = "^[0-9]*$";
+                              
+        Pattern pat = Pattern.compile(emailRegex);
+        if (number == null)
+            return false;
+        return pat.matcher(number).matches();
+    }
 }

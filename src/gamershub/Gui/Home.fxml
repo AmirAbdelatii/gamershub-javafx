@@ -17,7 +17,7 @@
    <children>
       <StackPane layoutX="258.0" prefHeight="670.0" prefWidth="945.0" style="-fx-background-color: #02030A;">
          <children>
-            <Pane prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:/C:/Users/bouza/OneDrive/Bureau/RestaurantMgtSampleUI-master/src/images/banner-bg.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
+            <Pane prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:/D:/piJava/Gamershub/src/gamershub/images/banner-bg1.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
                <children>
                   <Label fx:id="titleLabel" layoutX="63.0" layoutY="47.0" text="Title" textFill="#f8f8f8">
                      <font>

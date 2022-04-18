@@ -158,6 +158,17 @@ public class UserService implements IService<User> {
             " `coins` = '"+user.getCoins()+"', " +
             " `is_verified` = '"+user.getIsVerified()+"' " +
             "WHERE `username` = '"+user.getUsername()+"'";
+        if(user.getBirthDate()==null)
+            req = "UPDATE `user` SET " +
+                " `roles` = '"+user.getRole()+"', " +
+                " `email` = '"+user.getEmail()+"', " +
+                " `name` = '"+user.getName()+"', " +
+                " `second_name` = '"+user.getSecondName()+"', " +
+                " `last_updated` = CURRENT_TIMESTAMP, " +
+                " `is_enabled` = '"+user.getIsEnabled()+"', " +
+                " `coins` = '"+user.getCoins()+"', " +
+                " `is_verified` = '"+user.getIsVerified()+"' " +
+                "WHERE `username` = '"+user.getUsername()+"'";
         stm = con.createStatement();
         stm.executeUpdate(req);
     }

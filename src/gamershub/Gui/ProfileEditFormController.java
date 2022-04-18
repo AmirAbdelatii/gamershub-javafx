@@ -7,6 +7,7 @@ package gamershub.Gui;
 
 import gamershub.Entities.User;
 import gamershub.Services.UserService;
+import gamershub.Utils.Validations;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -105,19 +106,23 @@ public class ProfileEditFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void handleClicks(ActionEvent event) {
-        if(event.getSource() == update){
-            User user = new User(enabled.isSelected()?1:0, Integer. parseInt(coins.getText()), verified.isSelected()?1:0, username.getText(), admin.isSelected()?"[\"ROLE_ADMIN\"]":"[\"ROLE_USER\"]", email.getText(), name.getText(), secondName.getText(),Date.valueOf(birthdate.getValue()));
-            try {
-                new UserService().updateNoPass(user);
-            } catch (SQLException ex) {
-                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+        if (event.getSource() == update) {
+            if (!Validations.isNumberValid(coins.getText())) {
+                System.out.println("not a number");
+            } else {
+                User user = new User(enabled.isSelected() ? 1 : 0, Integer.parseInt(coins.getText()), verified.isSelected() ? 1 : 0, username.getText(), admin.isSelected() ? "[\"ROLE_ADMIN\"]" : "[\"ROLE_USER\"]", email.getText(), name.getText(), secondName.getText(), birthdate.getValue()!=null?Date.valueOf(birthdate.getValue()):null);
+                try {
+                    new UserService().updateNoPass(user);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
-        if(event.getSource() == delete){
+        if (event.getSource() == delete) {
             try {
                 new UserService().deleteByUsername(username.getText());
                 FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
@@ -128,8 +133,7 @@ public class ProfileEditFormController implements Initializable {
             } catch (Exception ex) {
                 Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        else {
+        } else {
             try {
                 FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
                 Parent homeRoot = homeLoader.load();
@@ -141,5 +145,5 @@ public class ProfileEditFormController implements Initializable {
             }
         }
     }
-    
+
 }
