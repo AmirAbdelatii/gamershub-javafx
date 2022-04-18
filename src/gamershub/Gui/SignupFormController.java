@@ -7,6 +7,7 @@ package gamershub.Gui;
 
 import gamershub.Entities.User;
 import gamershub.Services.UserService;
+import gamershub.Utils.Validations;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -52,24 +53,41 @@ public class SignupFormController implements Initializable {
 
     @FXML
     private void signUpClick(ActionEvent event) {
-        User u = new User();
-//        u.setBirthDate(Date.valueOf(birthdatePicker.getValue()));
-        u.setEmail(emailField.getText());
-        u.setUsername(usernameField.getText());
-        u.setPassword(passwordField.getText());
         UserService us = new UserService();
-        System.out.println(u);
-        try {
-            us.ajouter(u);
+        if (usernameField.getText().equals("") || passwordField.getText().equals("") || confirmPasswordField.getText().equals("") || emailField.getText().equals("")) {
+            errorMsg.setText("All fields are required!");
+        }else if (!Validations.isEmailValid(emailField.getText())) {
+            errorMsg.setText("Email adress is not valid!");
+        } 
+        else if (passwordField.getText().length() < 6) {
+            errorMsg.setText("Password is too weak!");
+        }
+        else if (!confirmPasswordField.getText().equals(passwordField.getText())) {
+            errorMsg.setText("Passwords does not match!");
+        }
+        else if (us.isUsernameTaken(usernameField.getText())){
+            errorMsg.setText("Username is already taken!");
+        } else if (us.isEmailTaken(emailField.getText())){
+            errorMsg.setText("Email is already taken!");
+        }
+        else {
+            User u = new User();
+            u.setEmail(emailField.getText());
+            u.setUsername(usernameField.getText());
+            u.setPassword(passwordField.getText());
+            
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginForm.fxml"));
-                Parent root = loader.load();
-                usernameField.getScene().setRoot(root);
-            } catch (IOException ex) {
-                Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+                us.ajouter(u);
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginForm.fxml"));
+                    Parent root = loader.load();
+                    usernameField.getScene().setRoot(root);
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
             }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
         }
     }
 

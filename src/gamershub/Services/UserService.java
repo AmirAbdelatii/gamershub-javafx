@@ -41,13 +41,13 @@ public class UserService implements IService<User> {
             pstm.setString(1, user.getUsername());
             pstm.setString(2, user.getEmail());
             pstm.setString(3, hasher.hash(user.getPassword()));
-            pstm.setString(4, "['ROLE_USER']");
+            pstm.setString(4, "[\"ROLE_USER\"]");
             pstm.setInt(5, 1);
             pstm.setInt(6, 0);
             pstm.setInt(7, 0);
             pstm.setInt(8, 0);
-            pstm.setString(9, "test");
-            pstm.setString(10, "test");
+            pstm.setString(9, user.getName());
+            pstm.setString(10, user.getSecondName());
             pstm.setDate(11, user.getBirthDate());
             pstm.executeUpdate();
             
@@ -166,5 +166,31 @@ public class UserService implements IService<User> {
         String req = "DELETE FROM `user` WHERE `username` = \""+username+"\"; ";
         stm = con.createStatement();
         stm.executeUpdate(req);
+    }
+    
+    public boolean isUsernameTaken(String username){
+        try {
+            String req = "select count(*) from `user` WHERE `username` = \""+username+"\"; ";
+            stm = con.createStatement();
+            ResultSet result = stm.executeQuery(req);
+            result.next();
+            return result.getInt(1) > 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
+    public boolean isEmailTaken(String email){
+        try {
+            String req = "select count(*) from `user` WHERE `email` = \""+email+"\"; ";
+            stm = con.createStatement();
+            ResultSet result = stm.executeQuery(req);
+            result.next();
+            return result.getInt(1) > 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 }
