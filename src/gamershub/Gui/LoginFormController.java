@@ -61,7 +61,7 @@ public class LoginFormController implements Initializable {
             errorMsg.setText("");
 //            if (Gamershub.loggedUser.getRole().equals("[\"ROLE_ADMIN\"]")) {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Session.fxml"));
                     Parent root = loader.load();
                     usernameField.getScene().setRoot(root);
                 } catch (IOException ex) {

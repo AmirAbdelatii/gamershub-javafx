@@ -1,0 +1,46 @@
+.split-menu-button{  
+    -fx-background-color : #05071F;
+    -fx-cursor :hand;
+}  
+
+.split-menu-button .arrow-button {
+    -fx-background-color : #05071F;
+    -fx-text-fill:  #F0882F;
+}
+.split-menu-button .label {
+    -fx-background-color : #05071F;
+    -fx-text-fill : #e7e5e5;
+    
+}
+.split-menu-button .label:hover {
+    -fx-background-color : #05071F;
+    -fx-text-fill:  #F0882F;
+}
+.split-menu-button .menu-item {
+    -fx-background-color : #05071F;
+    -fx-text-fill : white;
+    -fx-cursor :hand;
+}
+.split-menu-button .menu-item:hover {
+    -fx-text-fill:  #F0882F;
+}
+
+.button
+{
+-fx-background-color : #05071F;
+-fx-text-fill : #e7e5e5;
+-fx-cursor :hand;
+}
+.button:hover{
+-fx-text-fill:  #F0882F;
+}
+.button:pressed
+{
+-fx-text-fill:  #F0882F;
+}
+.transparent{
+     -fx-background-color : white;
+}
+button.search{
+    -fx-background-color : yellow;
+}
