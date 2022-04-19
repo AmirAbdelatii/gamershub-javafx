@@ -10,7 +10,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -49,7 +51,7 @@ public class ProfilePageController implements Initializable {
         this.coins.setText(Integer.toString(Gamershub.loggedUser.getCoins()));
         this.name.setText(Gamershub.loggedUser.getName());
         this.secondName.setText(Gamershub.loggedUser.getSecondName());
-        this.verified.setVisible(Gamershub.loggedUser.getIsVerified()==1);
+        this.verified.setVisible(Gamershub.loggedUser.getIsVerified() == 1);
     }
 
     /**
@@ -58,10 +60,23 @@ public class ProfilePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.setInfos();
-    }    
+    }
 
     @FXML
     private void handleClicks(ActionEvent event) {
+        if (event.getSource() == updateProfile) {
+            try {
+                FXMLLoader nodeLoader = new FXMLLoader(getClass().getResource("ProfileUpdate.fxml"));
+                Parent node = nodeLoader.load();
+                FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
+                Parent homeRoot = homeLoader.load();
+                HomeFrontController homeCtrl = homeLoader.getController();
+                homeCtrl.changePage("UPDATE MY PROFILE", node);
+                username.getScene().setRoot(homeRoot);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
-    
+
 }

@@ -4,14 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/LoginFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/SignupFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Utils/Validations.java</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/ProfilePageController.java</file>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/ProfileEditFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gamershub.java</file>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/HomeFrontController.java</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/UsersCardFormController.java</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/front.css</file>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Services/UserService.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/style.css</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/ProfilePage.fxml</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/ProfileUpdateController.java</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/HomeController.java</file>
         </group>
     </open-files>
 </project-private>

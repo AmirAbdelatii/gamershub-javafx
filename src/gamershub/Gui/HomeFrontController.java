@@ -47,6 +47,34 @@ public class HomeFrontController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void changePage(String title, Parent node) {
+        this.title.setText(title);
+        content.getChildren().removeAll(content.getChildren());
+        content.getChildren().add(node);
+    }
+    public void changePage(String state) {
+        if(state == "profile"){
+            title.setText("MY PROFILE");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("ProfilePage.fxml"));
+                Parent profileNode = profileLoader.load();
+                content.getChildren().add(profileNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(state == "logout"){
+            Gamershub.loggedUser = new User();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginForm.fxml"));
+                Parent root = loader.load();
+                content.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 
     @FXML
     private void handleClicks(ActionEvent event) {
