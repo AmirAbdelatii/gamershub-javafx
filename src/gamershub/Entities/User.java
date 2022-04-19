@@ -34,6 +34,12 @@ public class User {
         this.birthDate = birthDate;
     }
 
+    public User(int id) {
+        this.id = id;
+    }
+    
+    
+
     public Date getCreatedAt() {
         return createdAt;
     }

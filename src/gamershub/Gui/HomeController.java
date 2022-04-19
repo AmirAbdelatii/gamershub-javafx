@@ -44,10 +44,6 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnOrders;
     @FXML
-    private Button btnPackages;
-    @FXML
-    private Button btnSettings;
-    @FXML
     private Button btnSignout;
     @FXML
     private ImageView userImage;
@@ -57,6 +53,10 @@ public class HomeController implements Initializable {
     private Label titleLabel;
     @FXML
     private Pane mainContent;
+    @FXML
+    private Button btnBlog;
+    @FXML
+    private Button btnPlayer;
 
     /**
      * Initializes the controller class.
@@ -88,8 +88,29 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-
+            
+        } else if (event.getSource()== btnBlog){
+            titleLabel.setText("Forum");  
+             try {
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListBlogBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+              } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+                
+        } else if (event.getSource()== btnPlayer){
+            titleLabel.setText("Become a player");  
+             try {
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListPlayerBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+              } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+                
         }
+        
     }
 
 }
