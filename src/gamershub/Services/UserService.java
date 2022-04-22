@@ -123,11 +123,9 @@ public class UserService implements IService<User> {
                 user = new User(result.getInt(1), result.getString("username"), result.getString("password"), result.getString("roles"), result.getInt("is_enabled"), result.getInt("coins"), result.getInt("is_verified"), result.getInt("oauth"), result.getString("email"), result.getString("name"), result.getString("second_name"), result.getDate("created_at"), result.getDate("last_updated"), result.getDate("birth_date"));
             if(hasher.checkPassword(user.getPassword(), password)){
                 Gamershub.loggedUser = user;
-                System.out.println(user.getUsername()+" logged in!");
                 return true;
             }
             else{
-                System.out.println("invalid password");
                 return false;
             }
         } catch (SQLException ex) {
@@ -204,5 +202,26 @@ public class UserService implements IService<User> {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+    }
+    
+    public boolean isEmailTakenn(String email){
+        try {
+            String req = "select count(*) from `user` WHERE `email` = \""+email+"\"; ";
+            stm = con.createStatement();
+            ResultSet result = stm.executeQuery(req);
+            result.next();
+            return result.getInt(1) > 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
+    public void updatePass(String username, String password) throws SQLException {
+        String req = "UPDATE `user` SET " +
+            " `password` = '"+hasher.hash(password)+"' " +
+            "WHERE `username` = '"+username+"'";
+        stm = con.createStatement();
+        stm.executeUpdate(req);
     }
 }

@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 
@@ -42,6 +43,8 @@ public class ProfileUpdateController implements Initializable {
     private TextField email;
     @FXML
     private DatePicker birthdate;
+    @FXML
+    private Label errorMsg;
 
     /**
      * Initializes the controller class.
@@ -58,6 +61,7 @@ public class ProfileUpdateController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setInfos();
+        errorMsg.setText("");
     }
 
     @FXML

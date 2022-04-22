@@ -26,7 +26,7 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Button fx:id="details" mnemonicParsing="false" onAction="#detailsClick" text="Details" />
+            <Button fx:id="details" mnemonicParsing="false" onAction="#detailsClick" style="-fx-background-color: #F08E28; -fx-background-radius: 20px; -fx-padding: 10px; -fx-pref-width: 80px;" text="Details" textFill="#fcfcfc" />
          </children>
       </VBox>
    </children>

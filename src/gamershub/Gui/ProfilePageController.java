@@ -77,6 +77,19 @@ public class ProfilePageController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
+        if(event.getSource() == updatePass){
+            try {
+                FXMLLoader nodeLoader = new FXMLLoader(getClass().getResource("PasswordUpdateForm.fxml"));
+                Parent node = nodeLoader.load();
+                FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
+                Parent homeRoot = homeLoader.load();
+                HomeFrontController homeCtrl = homeLoader.getController();
+                homeCtrl.changePage("UPDATE PASSWORD", node);
+                username.getScene().setRoot(homeRoot);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
 
 }

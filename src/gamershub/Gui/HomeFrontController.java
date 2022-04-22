@@ -78,6 +78,7 @@ public class HomeFrontController implements Initializable {
 
     @FXML
     private void handleClicks(ActionEvent event) {
+        content.getChildren().removeAll(content.getChildren());
         if(event.getSource() == profile){
             title.setText("MY PROFILE");
             try {
