@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" prefHeight="530.0" prefWidth="832.0" style="-fx-background-color: transparent; -fx-background: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.ProductsContentFormController">
+   <content>
+      <FlowPane fx:id="content" alignment="TOP_CENTER" prefHeight="528.0" prefWidth="832.0">
+         <children>
+            <HBox fx:id="itemC" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="752.0" spacing="17.0" style="-fx-background-color: #05071F; -fx-background-radius: 20; -fx-background-insets: 0;">
+               <children>
+                  <Label maxWidth="13.0" minWidth="13.0" text="ID" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="63.0" minWidth="63.0" text="CategoryId" textAlignment="CENTER" textFill="#b7c3d7">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="34.0" minWidth="34.0" text="Name" textAlignment="CENTER" textFill="#b7c3d7">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="image" textAlignment="CENTER" textFill="#b7c3d7">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="28.0" minWidth="28.0" text="price" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="48.0" minWidth="48.0" text="quantity" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="64.0" minWidth="64.0" text="description" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="31.0" prefWidth="85.0" text="CreationDate  " textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="ModificationDate" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="isEnabled" textAlignment="CENTER" textFill="#b7c3d7">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="47.0" textAlignment="CENTER" textFill="#b7c3d7" />
+               </children>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+               <FlowPane.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </FlowPane.margin>
+            </HBox>
+         </children></FlowPane>
+   </content>
+</ScrollPane>

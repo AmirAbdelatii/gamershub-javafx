@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-image: url('file:/D:/piJava/Gamershub/src/gamershub/images/banner-bg1.jpg');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeFrontController">
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-image: url('file:C:/Users/meriam/Desktop/java_Desktop/src/gamershub/images/banner-bg1.jpg');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeFrontController">
    <children>
       <Pane prefHeight="79.0" prefWidth="1203.0" style="-fx-background-color: #00003E4A;">
          <children>
@@ -41,7 +41,7 @@
                   </Button>
                   <MenuButton mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: transparent;" text="Shop" textFill="WHITE">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem fx:id="btnCategories" mnemonicParsing="false" onAction="#handleClicks" text="Categories" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                      </items>
                      <font>

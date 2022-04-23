@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 
 /**
@@ -39,6 +40,8 @@ public class HomeFrontController implements Initializable {
     private Label title;
     @FXML
     private Pane content;
+    @FXML
+    private MenuItem btnCategories;
 
     /**
      * Initializes the controller class.
@@ -98,6 +101,17 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+           if(event.getSource() == btnCategories){
+                title.setText("Categories");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CategoryPageFront.fxml"));
+                Parent categoryNode = loader.load();
+                content.getChildren().add(categoryNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
+
     
 }

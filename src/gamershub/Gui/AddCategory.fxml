@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="832.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gamershub.Gui.AddCategoryController">
+   <children>
+      <Pane layoutX="228.0" layoutY="86.0" prefHeight="359.0" prefWidth="376.0" style="-fx-background-color: #060928; -fx-background-radius: 3em;">
+         <children>
+            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="-37.0" layoutY="23.0" prefHeight="288.0" prefWidth="450.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="categoryName" prefHeight="35.0" prefWidth="237.0" promptText="Category Name" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label fx:id="categoryNameError" textFill="#c20b0b" />
+                  <TextField fx:id="description" prefHeight="37.0" prefWidth="244.0" promptText="Description" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label fx:id="descriptionError" textFill="#c20b0b" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="image" prefHeight="40.0" prefWidth="163.0" promptText="Image" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Button fx:id="uploadImage" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="imageError" textFill="#c20b0b" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <HBox layoutX="167.0" layoutY="279.0" prefHeight="42.0" prefWidth="195.0" spacing="20.0">
+               <children>
+                  <Button fx:id="cancel" lineSpacing="3.0" mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #6610f2; -fx-background-radius: 2em; -fx-cursor: hand;" text="cancel" textFill="#e7e5e5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addCategory" lineSpacing="3.0" mnemonicParsing="false" onAction="#add" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Submit" textFill="#e7e5e5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

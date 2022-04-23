@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-image: url('file:/D:/piJava/Gamershub/src/gamershub/images/login-bg.jpg'); -fx-background-size: auto; -fx-background-position: center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.LoginFormController">
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-image: url('file:C:/Users/meriam/Desktop/java_Desktop/src/gamershub/images/login-bg.jpg'); -fx-background-size: auto; -fx-background-position: center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.LoginFormController">
    <children>
       <Pane layoutX="294.0" layoutY="94.0" prefHeight="670.0" prefWidth="703.0" style="-fx-background-color: #4609C3; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="95.0" />
       <VBox alignment="CENTER" prefHeight="670.0" prefWidth="1203.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
