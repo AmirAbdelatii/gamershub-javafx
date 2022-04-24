@@ -89,7 +89,7 @@ public class AddcoachController implements Initializable {
         ServiceCoachs us = new ServiceCoachs();
         System.out.println(c);
         try {
-            us.ajouter(c);
+            us.ajouterr(c);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach.fxml"));
                 Parent root = loader.load();
@@ -118,5 +118,16 @@ public class AddcoachController implements Initializable {
 //             Logger.getLogger(CoachController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //    }
+
+    @FXML
+    private void cancelClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach.fxml"));
+            Parent root = loader.load();
+            gamecombo.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

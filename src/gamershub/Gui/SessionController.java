@@ -70,6 +70,7 @@ public class SessionController implements Initializable {
                 c.Setdatedebut(u.getDate_debut().toString());
                 c.Setdatefin(u.getDate_fin().toString());
                 c.Setprix(Float. toString(u.getPrix()));
+                c.Setuserid(String.valueOf(u.getUser()));
                 content.getChildren().add(root);
                 
                 

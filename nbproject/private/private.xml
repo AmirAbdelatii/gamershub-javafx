@@ -4,28 +4,36 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/AddcoachController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gamershub.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/UsersFormContentController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/SessionController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Sendmail.fxml</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/AddsessionController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/UsersCardFormController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/User.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/EditcoachController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Editcoach.fxml</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Utils/BcryptHasher.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/Coach.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Utils/JavaMail.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Session.fxml</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/Game.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/CoachitemController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Editsession.fxml</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/CoachController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/Sessioncoaching.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Services/UserService.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/MenuBackController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Services/IService.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/AddsessionController.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/UsersCardFormController.java</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/EditsessionController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Services/GameService.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Services/ServiceSessions.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/EditcoachController.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Editcoach.fxml</file>
+            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/SendmailController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/LoginFormController.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/Coach.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/SignupFormController.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Session.fxml</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/Sessionitem.fxml</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Entities/Game.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/CoachitemController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/SessionitemController.java</file>
             <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Services/ServiceCoachs.java</file>
-            <file>file:/C:/Users/hp/Desktop/java%20Fx/src/gamershub/Gui/CoachController.java</file>
         </group>
     </open-files>
 </project-private>

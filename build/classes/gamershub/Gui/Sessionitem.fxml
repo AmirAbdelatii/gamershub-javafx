@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="215.0" prefWidth="225.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gamershub.Gui.SessionitemController">
+<AnchorPane id="AnchorPane" prefHeight="215.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.SessionitemController">
    <children>
       <VBox layoutX="13.0" layoutY="18.0" prefHeight="200.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,6 +23,11 @@
                </image>
             </ImageView>
             <Label fx:id="idsession" text="ID" visible="false" />
+            <Label fx:id="userid" text="user id" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="Cambria Bold" size="12.0" />
+               </font>
+            </Label>
             <Label fx:id="coachid" text="coach id" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="90.0" top="5.0" />
@@ -77,12 +81,17 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#updateClick" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="UPDATE" textFill="WHITE">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="30.0" top="8.0" />
+                        <Insets bottom="10.0" left="10.0" top="8.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#exportClick" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Export excel" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="10.0" top="8.0" />
                      </HBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#deleteClick" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="DELETE" textFill="WHITE">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="60.0" top="8.0" />
+                        <Insets bottom="10.0" top="8.0" />
                      </HBox.margin>
                   </Button>
                </children>

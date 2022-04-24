@@ -5,7 +5,9 @@
  */
 package gamershub.Gui;
 
+import gamershub.Entities.User;
 import gamershub.Services.ServiceCoachs;
+import gamershub.Utils.JavaMail;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -102,5 +104,15 @@ public class CoachitemController implements Initializable {
         coachname.setTextFill(Color.web("#000000"));
         
     }    
+
+    @FXML
+    private void contatctClick(ActionEvent event) {
+        User user = new User();
+        try {
+            JavaMail.sendMail("ghub2441@gmail.com");
+        } catch (Exception ex) {
+            Logger.getLogger(CoachitemController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

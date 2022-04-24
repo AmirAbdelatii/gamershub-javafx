@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -56,8 +57,6 @@ public class AddsessionController implements Initializable {
     @FXML
     private Label errorMsg;
     @FXML
-    private Button addsession;
-    @FXML
     private TextField descField;
 
     /**
@@ -67,29 +66,71 @@ public class AddsessionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try {
-        coachnameField.setText(Gamershub.loggedUser.getUsername());
+             ServiceCoachs us = new ServiceCoachs();
+             int id=us.getIdUser(Gamershub.loggedUser.getId());
+            coachnameField.setText(String.valueOf(id));
             UserService u = new UserService();
             List<User> list = u.afficher();
             ObservableList<String> listuser = FXCollections.observableArrayList();
             for (User g : list) {
-                listuser.add(g.getId()+ ":  " +g.getUsername());
+                listuser.add(g.getId() + ":  " + g.getUsername());
             }
 
             comboclient.setItems(listuser);
         } catch (Exception ex) {
-             Logger.getLogger(SessionController.class.getName()).log(Level.SEVERE, null, ex);
-        }   
+            Logger.getLogger(SessionController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-
+     int prix;
     @FXML
     private void addsessionClick(ActionEvent event) {
+        boolean check=false;
+        System.out.print(startdate.getValue());
+        if (startdate.getValue().isBefore(LocalDate.now())||startdate.getValue()==null) {
+                     // Tomorrow is too soon.
+                     
+                     startdate.setStyle("-fx-background-color: #ff4444;");
+                     check = true;
+                 
+                 }
+        
+        if(enddate.getValue().isBefore(startdate.getValue())||enddate.getValue()==null){
+            
+            enddate.setStyle("-fx-background-color: #ff4444;");
+                     check = true;
+        
+        }
+         if(Prixfield.getText().isEmpty()){
+                    Prixfield.setStyle("-fx-text-box-border: #FF0000; -fx-focus-color: #FF0000;");
+                    check=true;
+               }
+        
+       
+        try
+                {
+                   prix = Integer.parseInt(Prixfield.getText().trim());
+
+                }
+                catch (NumberFormatException nfe)
+                {
+                  Prixfield.setStyle("-fx-text-box-border: #FF0000; -fx-focus-color: #FF0000;");
+ 
+                  Prixfield.setText( "" ) ;
+                  Prixfield.setPromptText("Le prix doit être un entier");
+                  System.out.println("NumberFormatException: " + nfe.getMessage());
+                  check =true;
+                }
+        if(descField.getText().isEmpty()){
+                    descField.setStyle("-fx-text-box-border: #FF0000; -fx-focus-color: #FF0000;");
+                    check=true;
+               }
+        if (check) return;
         Sessioncoaching c = new Sessioncoaching();
-        coachnameField.setText(String.valueOf(Gamershub.loggedUser.getId()));
         System.out.println("ghjhjjh");
         c.setCoach(Integer.parseInt(coachnameField.getText()));
-        String [] userlist = comboclient.getValue().split(":", 2);
-        //System.out.println(gamelist);
+        String[] userlist = comboclient.getValue().split(":", 2);
+        System.out.println("hi" + coachnameField.getText());
         c.setUser(Integer.parseInt(userlist[0]));
         c.setDescription(descField.getText());
         c.setPrix(Float.parseFloat(Prixfield.getText()));
@@ -98,7 +139,7 @@ public class AddsessionController implements Initializable {
         ServiceSessions us = new ServiceSessions();
         System.out.println(c);
         try {
-            us.ajouter(c);
+            us.ajouterr(c);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach.fxml"));
                 Parent root = loader.load();

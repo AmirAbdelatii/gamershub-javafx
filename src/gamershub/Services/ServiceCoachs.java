@@ -95,6 +95,7 @@ public class ServiceCoachs implements IService<Coach> {
          return coachname;
     }
     
+    
      public void deletecoach(int idcoach) throws SQLException{
      String req="DELETE FROM `coach` WHERE id = "+idcoach ;
      stm = con.createStatement();
@@ -116,6 +117,18 @@ public class ServiceCoachs implements IService<Coach> {
         pstm.executeUpdate();   
 
       }
+     
+     public int getIdUser(int id)throws SQLException
+     {   int iduser=0;
+         String req = "SELECT id from `coach` WHERE user_id="+id+"";
+         stm = con.createStatement();
+        ResultSet rst = stm.executeQuery(req);
+        while(rst.next()){
+          iduser= rst.getInt("id");
+         }
+         return iduser;
+        
+     }
     
     
 }

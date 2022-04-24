@@ -16,8 +16,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1203.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.AddsessionController">
    <children>
-      <Pane layoutX="314.0" layoutY="114.0" prefHeight="526.0" prefWidth="723.0" style="-fx-background-color: #4609C3; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="95.0" />
-      <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="10.0">
+      <Pane layoutX="314.0" layoutY="114.0" prefHeight="526.0" prefWidth="723.0" style="-fx-background-color: #4609C3; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="95.0" />
+      <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="10.0">
          <children>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0">
                <children>
@@ -33,7 +33,7 @@
             </HBox>
             <VBox>
                <children>
-                  <Label text="Coach Name" textFill="WHITE">
+                  <Label text="Coach ID" textFill="WHITE">
                      <padding>
                         <Insets bottom="12.0" left="2.0" />
                      </padding>
@@ -41,7 +41,7 @@
                         <Font name="Segoe UI Semibold" size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="coachnameField" promptText="username" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" />
+                  <TextField fx:id="coachnameField" editable="false" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="350.0" right="350.0" />
@@ -105,7 +105,7 @@
             </HBox>
             <VBox prefHeight="75.0" prefWidth="883.0">
                <children>
-                  <Label text="Prix" textFill="WHITE">
+                  <Label text="Price" textFill="WHITE">
                      <padding>
                         <Insets bottom="12.0" left="2.0" />
                      </padding>
@@ -116,7 +116,7 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="Prixfield" promptText="Username" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" text="Prix" />
+                  <TextField fx:id="Prixfield" promptText="price" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" />
                   <VBox prefHeight="75.0" prefWidth="883.0">
                      <children>
                         <Label text="Description" textFill="WHITE">
@@ -130,7 +130,7 @@
                               <Insets />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="descField" promptText="Username" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" text="Description" />
+                        <TextField fx:id="descField" promptText="Description" style="-fx-background-color: #370898; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: white; -fx-min-width: 620px;" />
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -141,7 +141,7 @@
                   <Insets bottom="10.0" left="350.0" right="350.0" top="10.0" />
                </VBox.margin>
             </VBox>
-            <VBox fx:id="descField" alignment="CENTER" prefHeight="119.0" prefWidth="1203.0">
+            <VBox alignment="CENTER" prefHeight="119.0" prefWidth="1203.0">
                <children>
                   <Label fx:id="errorMsg" textFill="#fc7676">
                      <font>
@@ -151,7 +151,7 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Button id="loginBtn" fx:id="addsession" mnemonicParsing="false" onAction="#addsessionClick" style="-fx-padding: 9px; -fx-pref-width: 416px; -fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Add" textFill="WHITE">
+                  <Button id="loginBtn" mnemonicParsing="false" onAction="#addsessionClick" style="-fx-padding: 9px; -fx-pref-width: 416px; -fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Add" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="35.0" top="20.0" />
                      </VBox.margin>

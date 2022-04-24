@@ -48,15 +48,19 @@
                </VBox.margin>
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
                <children>
-                  <Button mnemonicParsing="false" onAction="#updateClick" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="UPDATE" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#deleteClick" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="DELETE" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#updateClick" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="UPDATE" textFill="WHITE">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="30.0" top="8.0" />
+                        <Insets left="30.0" right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#deleteClick" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="DELETE" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#contatctClick" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Contact" textFill="WHITE">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="60.0" top="8.0" />
+                        <Insets left="10.0" right="10.0" />
                      </HBox.margin>
                   </Button>
                </children>

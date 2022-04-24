@@ -38,10 +38,11 @@ public class Sessioncoaching {
         this.date_fin = date_fin;
     }
     
-    public Sessioncoaching(int id, Date date_debut, Date date_fin,float prix, String description,String client ,int coach) {
+    public Sessioncoaching(int id, Date date_debut, Date date_fin,float prix, String description,String client ,int user,int coach) {
        this.id = id;
         this.description = description;
         this.coach = coach;
+        this.user = user;
         this.prix = prix;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
@@ -50,7 +51,7 @@ public class Sessioncoaching {
 
     @Override
     public String toString() {
-        return "Sessioncoaching{" + "id=" + id + ", usere=" + user + ", description=" + description + ", coach=" + coach + ", prix=" + prix + ", date_debut=" + date_debut + ", date_fin=" + date_fin + '}';
+        return "Sessioncoaching{" + "id=" + id + ", user=" + user + ", description=" + description + ", coach=" + coach + ", prix=" + prix + ", date_debut=" + date_debut + ", date_fin=" + date_fin + '}';
     }
 
     public int getId() {

@@ -73,14 +73,14 @@ public class ServiceSessions implements IService <Sessioncoaching> {
     }
     
     public List<Sessioncoaching> afficherr() throws SQLException {
-        String req = "Select s.id, s.date_debut, s.date_fin, s.prix, s.description, u.username, s.coach_id from sessioncoaching s ,user u where s.user_id=u.id";
+        String req = "Select s.id, s.date_debut, s.date_fin, s.prix, s.description, u.username, u.id, s.coach_id from sessioncoaching s ,user u where s.user_id=u.id";
         stm = con.createStatement();
         ResultSet rst = stm.executeQuery(req);
         System.out.println(rst.toString());
         List<Sessioncoaching> sessioncoaching = new ArrayList<Sessioncoaching>();
         while(rst.next()){
             
-            Sessioncoaching p = new Sessioncoaching(rst.getInt(1),rst.getDate(2),rst.getDate(3),rst.getFloat(4),rst.getString(5),rst.getString(6),rst.getInt(7));
+            Sessioncoaching p = new Sessioncoaching(rst.getInt(1),rst.getDate(2),rst.getDate(3),rst.getFloat(4),rst.getString(5),rst.getString(6),rst.getInt(7),rst.getInt(8));
             sessioncoaching.add(p);
             
         

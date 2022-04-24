@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gamershub.Gui.SendmailController">
+   <children>
+      <Label layoutX="106.0" layoutY="87.0" text="Send from" />
+      <TextField fx:id="fromfield" layoutX="176.0" layoutY="83.0" prefHeight="25.0" prefWidth="166.0" />
+      <Label layoutX="106.0" layoutY="127.0" text="Subject" />
+      <TextField fx:id="subjectfield" layoutX="176.0" layoutY="123.0" prefHeight="25.0" prefWidth="166.0" />
+      <Label layoutX="105.0" layoutY="154.0" text="Message" />
+      <TextArea fx:id="messagefield" layoutX="176.0" layoutY="162.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="106.0" layoutY="51.0" text="Send To" />
+      <TextField fx:id="sendfield" layoutX="176.0" layoutY="47.0" prefHeight="25.0" prefWidth="166.0" />
+      <Button layoutX="406.0" layoutY="331.0" mnemonicParsing="false" onAction="#sendclick" text="Send" />
+      <Button layoutX="462.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelclick" text="Cancel" />
+   </children>
+</AnchorPane>
