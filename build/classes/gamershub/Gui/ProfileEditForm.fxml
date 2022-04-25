@@ -19,7 +19,7 @@
             <Image url="@../images/jimmy-fallon.png" />
          </image>
       </ImageView>
-      <HBox layoutX="115.0" layoutY="127.0">
+      <HBox layoutX="67.0" layoutY="119.0">
          <children>
             <VBox>
                <children>
@@ -35,7 +35,7 @@
                   <VBox>
                      <children>
                         <Label text="Email" textFill="#f5f5f5" />
-                        <TextField fx:id="email" />
+                        <TextField fx:id="email" style="-fx-border-color: #6610f2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-padding: 10px; -fx-pref-width: 250px;" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -48,7 +48,7 @@
                               <Insets />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="name" />
+                        <TextField fx:id="name" style="-fx-border-color: #6610f2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-padding: 10px; -fx-pref-width: 250px;" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -57,7 +57,7 @@
                   <VBox>
                      <children>
                         <Label text="Second Name" textFill="#f5f5f5" />
-                        <TextField fx:id="secondName" />
+                        <TextField fx:id="secondName" style="-fx-border-color: #6610f2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-padding: 10px; -fx-pref-width: 250px;" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -73,7 +73,7 @@
                   <VBox>
                      <children>
                         <Label text="Birthdate" textFill="#f5f5f5" />
-                        <DatePicker fx:id="birthdate" />
+                        <DatePicker fx:id="birthdate" style="-fx-border-color: #6610f2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-pref-width: 250px;" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -82,7 +82,7 @@
                   <VBox>
                      <children>
                         <Label text="Coins" textFill="#f5f5f5" />
-                        <TextField fx:id="coins" />
+                        <TextField fx:id="coins" style="-fx-border-color: #6610f2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-padding: 10px; -fx-pref-width: 250px;" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -110,15 +110,15 @@
             </VBox>
          </children>
       </HBox>
-      <HBox layoutX="300.0" layoutY="439.0">
+      <HBox layoutX="77.0" layoutY="466.0" spacing="20.0">
          <children>
-            <Button fx:id="update" mnemonicParsing="false" onAction="#handleClicks" text="Update" />
-            <Button fx:id="delete" mnemonicParsing="false" onAction="#handleClicks" text="Delete">
+            <Button fx:id="update" mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-radius: 20px; -fx-padding: 10px; -fx-pref-width: 200px; -fx-cursor: hand; -fx-background-color: #F08E28;" text="Update" textFill="WHITE" />
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-radius: 20px; -fx-padding: 10px; -fx-pref-width: 200px; -fx-cursor: hand; -fx-background-color: #ee0000;" text="Delete" textFill="WHITE">
                <HBox.margin>
                   <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleClicks" text="Cancel" />
+            <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-radius: 20px; -fx-padding: 10px; -fx-pref-width: 200px; -fx-cursor: hand; -fx-background-color: #6610f2;" text="Cancel" textFill="WHITE" />
          </children>
       </HBox>
    </children>
