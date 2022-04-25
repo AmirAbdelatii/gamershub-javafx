@@ -6,7 +6,9 @@
 package gamershub.Gui;
 
 import Entities.Category;
+import Entities.Products;
 import gamershub.Services.CategoryService;
+import gamershub.Services.ProductsService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -18,7 +20,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
 /**
@@ -26,42 +27,47 @@ import javafx.scene.layout.FlowPane;
  *
  * @author meriam
  */
-public class CategoryPageFrontController implements Initializable {
+public class ProductsPageFrontController implements Initializable {
 
     @FXML
-    private FlowPane content;
+    public FlowPane content;
+    public void getProductsList(List<Products> listProd) {
+        
+    }
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         CategoryService cs = new CategoryService();
+      
+     
+        ProductsService ps = new ProductsService();
         try {
 
-            List<Category> categories = cs.afficher();
+            List<Products> products = ps.afficher();
 
-//            try {
-            for (Category c : categories) {
 
-                FXMLLoader item = new FXMLLoader(getClass().getResource("CategoryCard.fxml"));
+            for (Products p : products) {
+
+                FXMLLoader item = new FXMLLoader(getClass().getResource("ProductCard.fxml"));
                 try {
                     Parent itek = item.load();
-                    CategoryCardController categoryCardController = item.getController();
-                    //System.out.print(itemController);
-                    categoryCardController.setId(c.getId()+"");
-                    categoryCardController.setCategoryName(c.getCategoryName());
-                    categoryCardController.setDescription(c.getDescription());
-                    categoryCardController.setImage("http://127.0.0.1:8000/shop/images/" + c.getImage());
+                    ProductCardController itemController = item.getController();
+
+                    itemController.setProductName(p.getProductName());
+                    itemController.setPrice(p.getPrice() + "");
+                    itemController.setId(p.getId() + "");
+                    itemController.setImage("http://127.0.0.1:8000/shop/images/" + p.getImage());
 
                     content.getChildren().add(itek);
                 } catch (IOException ex) {
-                    Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductsContentFormController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }    

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="categoryCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="282.0" style="-fx-background-color: #0E063D; -fx-border-radius: 10px; -fx-background-radius: 2em; -fx-border-color: #EDB8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.CartItemController">
+   <children>
+      <Label fx:id="prodId" layoutX="15.0" layoutY="45.0" prefHeight="40.0" prefWidth="245.0">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="141.0" layoutY="146.0" startX="-100.0" stroke="#f8f9fc" />
+      <Label fx:id="quantity" layoutX="89.0" layoutY="160.0" prefHeight="62.0" prefWidth="105.0">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

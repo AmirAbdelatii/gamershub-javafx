@@ -42,6 +42,10 @@ public class HomeFrontController implements Initializable {
     private Pane content;
     @FXML
     private MenuItem btnCategories;
+    @FXML
+    private MenuItem productsbtn;
+    @FXML
+    private MenuItem btnCart;
 
     /**
      * Initializes the controller class.
@@ -77,6 +81,16 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+          if(state == "Products"){
+                title.setText("Products");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsPageFront.fxml"));
+                Parent root = loader.load();
+                content.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     @FXML
@@ -109,6 +123,27 @@ public class HomeFrontController implements Initializable {
                 content.getChildren().add(categoryNode);
             } catch (Exception ex) {
                 Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           if(event.getSource() == productsbtn){
+                title.setText("Products");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsPageFront.fxml"));
+                Parent productNode = loader.load();
+                content.getChildren().add(productNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           
+               if(event.getSource() == btnCart){
+                title.setText("Cart");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CartPage.fxml"));
+                Parent cartNode = loader.load();
+                content.getChildren().add(cartNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CartPageController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

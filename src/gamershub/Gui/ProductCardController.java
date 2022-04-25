@@ -5,55 +5,41 @@
  */
 package gamershub.Gui;
 
-import Entities.Products;
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Loader;
-import gamershub.Services.ProductsService;
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import static gamershub.Gamershub.cartMap;
 
 /**
  * FXML Controller class
  *
  * @author meriam
  */
-public class CategoryCardController implements Initializable {
+public class ProductCardController implements Initializable {
 
+    @FXML
+    private Pane categoryCard;
     @FXML
     private ImageView image;
     @FXML
     private Label name;
     @FXML
-    private Label description;
+    private Label price;
     @FXML
-    private Pane categoryCard;
+    private Label prodId;
     @FXML
-    private Label catId;
-
-    List<Products> products;
+    private ImageView cartbtn;
 
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
-
-    public void setCategoryName(String categoryName) {
+    public void setProductName(String categoryName) {
         this.name.setText(categoryName);
     }
 
@@ -61,14 +47,30 @@ public class CategoryCardController implements Initializable {
         this.image.setImage(new Image(url, 209, 114, false, false));
     }
 
-    public void setDescription(String description) {
-        this.description.setText(description);
+    public void setPrice(String price) {
+        this.price.setText(price);
     }
 
     public void setId(String id) {
-        this.catId.setText(id);
+        this.prodId.setText(id);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+
+    @FXML
+    private void addProductToCart(MouseEvent event) {
+        int qt = 0;
+        if (cartMap.containsKey(Integer.parseInt(prodId.getText()))) {
+            qt = cartMap.get(Integer.parseInt(prodId.getText()));       
+            cartMap.put(Integer.parseInt(prodId.getText()), qt + 1);
+        } else {
+            cartMap.put(Integer.parseInt(prodId.getText()), 1);
+            System.out.print(cartMap.keySet());
+        }
+
     }
 
 }
-
-

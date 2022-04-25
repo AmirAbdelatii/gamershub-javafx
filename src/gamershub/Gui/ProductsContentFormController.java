@@ -17,9 +17,14 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -44,7 +49,6 @@ public class ProductsContentFormController implements Initializable {
 
             List<Products> products = ps.afficher();
 
-
             for (Products p : products) {
 
                 FXMLLoader item = new FXMLLoader(getClass().getResource("ProductItemForm.fxml"));
@@ -64,6 +68,12 @@ public class ProductsContentFormController implements Initializable {
                     itemController.setImage("http://127.0.0.1:8000/shop/images/" + p.getImage());
 
                     content.getChildren().add(itek);
+                    if ( p.getQuantityStocked()== 0) {
+                        Image img=new Image("gamershub/images/warning.png");
+                        Notifications notfBuilder = Notifications.create().title("Quantity warning").text("The quantity of the product number "+p.getId()+" is zero")
+                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.TOP_LEFT);
+                        notfBuilder.show();
+                    }
                 } catch (IOException ex) {
                     Logger.getLogger(ProductsContentFormController.class.getName()).log(Level.SEVERE, null, ex);
                 }

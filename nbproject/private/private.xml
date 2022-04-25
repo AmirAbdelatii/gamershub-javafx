@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CategoryItemFormController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/HomeController.java</file>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CategoriesContentFormController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/AddCategory.fxml</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/AddCategoryController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CategoryPageFrontController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CategoryCardController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/ProductsPageFrontController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/ProductCardController.java</file>
         </group>
     </open-files>
 </project-private>
