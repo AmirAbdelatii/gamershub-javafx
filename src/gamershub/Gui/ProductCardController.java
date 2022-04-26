@@ -15,6 +15,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import static gamershub.Gamershub.cartMap;
+import static gamershub.Gamershub.loggedUser;
+import gamershub.Services.WishListService;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * FXML Controller class
@@ -35,6 +40,8 @@ public class ProductCardController implements Initializable {
     private Label prodId;
     @FXML
     private ImageView cartbtn;
+    @FXML
+    private ImageView wishlistIcon;
 
     /**
      * Initializes the controller class.
@@ -45,6 +52,10 @@ public class ProductCardController implements Initializable {
 
     public void setImage(String url) {
         this.image.setImage(new Image(url, 209, 114, false, false));
+    }
+    
+     public void setWishList(String url) {
+        this.wishlistIcon.setImage(new Image(url, 32, 32, false, false));
     }
 
     public void setPrice(String price) {
@@ -71,6 +82,29 @@ public class ProductCardController implements Initializable {
             System.out.print(cartMap.keySet());
         }
 
+    }
+
+    @FXML
+    private void addRemove(MouseEvent event) {
+        try {
+            String img="http://127.0.0.1:8000/shop/images/";
+            WishListService ws=new WishListService();
+            if( ws.afficher().contains(Integer.parseInt(prodId.getText()))){
+                ws.remove(Integer.parseInt(prodId.getText()));
+               wishlistIcon.setImage(new Image(img+"empty.png", 32, 32, false, false));
+            }
+            else{
+                ws.add(Integer.parseInt(prodId.getText()),loggedUser.getId());
+                 wishlistIcon.setImage(new Image(img+"full.png", 32, 32, false, false));
+            }
+                  
+                } catch (SQLException ex) {
+            Logger.getLogger(ProductCardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+        
+        
     }
 
 }

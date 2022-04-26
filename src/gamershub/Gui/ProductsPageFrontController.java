@@ -9,6 +9,7 @@ import Entities.Category;
 import Entities.Products;
 import gamershub.Services.CategoryService;
 import gamershub.Services.ProductsService;
+import gamershub.Services.WishListService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -59,7 +60,12 @@ public class ProductsPageFrontController implements Initializable {
                     itemController.setPrice(p.getPrice() + "");
                     itemController.setId(p.getId() + "");
                     itemController.setImage("http://127.0.0.1:8000/shop/images/" + p.getImage());
-
+                    
+                    //wishList
+                    WishListService ws=new WishListService();
+                    if( ws.afficher().contains(p.getId())){
+                    itemController.setWishList("http://127.0.0.1:8000/shop/images/" +"full.png");
+                    }
                     content.getChildren().add(itek);
                 } catch (IOException ex) {
                     Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);

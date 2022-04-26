@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/HomeFrontController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/ProductsContentFormController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Entities/Cart.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CartItem.fxml</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Entities/Order.java</file>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Services/OrderService.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CartItemController.java</file>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CartPageController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/OrderValidate.fxml</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/OrderValidateController.java</file>
         </group>
     </open-files>
 </project-private>
