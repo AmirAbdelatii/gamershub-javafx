@@ -56,11 +56,13 @@ public class HomeFrontController implements Initializable {
     }    
     
     public void changePage(String title, Parent node) {
+         content.getChildren().removeAll(content.getChildren());
         this.title.setText(title);
         content.getChildren().removeAll(content.getChildren());
         content.getChildren().add(node);
     }
     public void changePage(String state) {
+         content.getChildren().removeAll(content.getChildren());
         if(state == "profile"){
             title.setText("MY PROFILE");
             try {
@@ -86,6 +88,18 @@ public class HomeFrontController implements Initializable {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsPageFront.fxml"));
                 Parent root = loader.load();
+                
+                content.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+          if(state == "Order-CheckOut"){
+                title.setText("Order-CheckOut");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderValidate.fxml"));
+                Parent root = loader.load();
+                
                 content.getScene().setRoot(root);
             } catch (IOException ex) {
                 Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
@@ -95,6 +109,7 @@ public class HomeFrontController implements Initializable {
 
     @FXML
     private void handleClicks(ActionEvent event) {
+         content.getChildren().removeAll(content.getChildren());
         if(event.getSource() == profile){
             title.setText("MY PROFILE");
             try {
