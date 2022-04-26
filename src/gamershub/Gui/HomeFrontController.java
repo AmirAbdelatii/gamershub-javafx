@@ -89,6 +89,16 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if(event.getSource() == games){
+            title.setText("GAMES");
+            try {
+                FXMLLoader gameLoader = new FXMLLoader(getClass().getResource("GamesFront.fxml"));
+                Parent gameNode = gameLoader.load();
+                content.getChildren().add(gameNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         if(event.getSource() == logout){
             Gamershub.loggedUser = new User();
             try {
