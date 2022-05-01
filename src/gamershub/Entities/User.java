@@ -155,13 +155,24 @@ public class User {
         return "User{" + "id=" + id + ", isEnabled=" + isEnabled + ", coins=" + coins + ", isVerified=" + isVerified + ", oauth=" + oauth + ", username=" + username + ", password=" + password + ", role=" + role + ", email=" + email + ", name=" + name + ", secondName=" + secondName + ", createdAt=" + createdAt + ", lastUpdated=" + lastUpdated + ", birthDate=" + birthDate + '}';
     }
 
-    public User(int isEnabled, int coins, int isVerified, int oauth, String username, String password, String role, String email, String name, String secondName, Date birthDate) {
+    public User(int isEnabled, int coins, int isVerified, String username, String password, String role, String email, String name, String secondName, Date birthDate) {
         this.isEnabled = isEnabled;
         this.coins = coins;
         this.isVerified = isVerified;
-        this.oauth = oauth;
         this.username = username;
         this.password = password;
+        this.role = role;
+        this.email = email;
+        this.name = name;
+        this.secondName = secondName;
+        this.birthDate = birthDate;
+    }
+    
+    public User(int isEnabled, int coins, int isVerified, String username, String role, String email, String name, String secondName, Date birthDate) {
+        this.isEnabled = isEnabled;
+        this.coins = coins;
+        this.isVerified = isVerified;
+        this.username = username;
         this.role = role;
         this.email = email;
         this.name = name;

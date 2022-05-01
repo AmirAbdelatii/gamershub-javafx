@@ -14,20 +14,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import gamershub.Gamershub;
 
 /**
  *
  * @author MAB
  */
-public class GameService implements IService<Game>{
+public class GameService implements IService<Game> {
 
     Connection con;
     Statement stm;
-    
+
     public GameService() {
         con = MyDB.getInstance().getCon();
     }
-    
 
     @Override
     public void ajouter(Game game) throws SQLException {
@@ -51,7 +51,7 @@ public class GameService implements IService<Game>{
         ResultSet result = stm.executeQuery(req);
         List<Game> games = new ArrayList<Game>();
         while (result.next()) {
-            Game g = new Game(result.getInt("id"),result.getString("name"),result.getString("image"),result.getString("description"),result.getDate("created_at"),result.getDate("updated_at"));
+            Game g = new Game(result.getInt("id"), result.getString("name"), result.getString("image"), result.getString("description"), result.getDate("created_at"), result.getDate("updated_at"));
             games.add(g);
         }
         return games;
@@ -59,21 +59,64 @@ public class GameService implements IService<Game>{
 
     @Override
     public void delete(Game game) throws SQLException {
-        String req = "DELETE FROM `game` WHERE `id` = \""+game.getId()+"\"; ";
+        String req = "DELETE FROM `game` WHERE `id` = \"" + game.getId() + "\"; ";
         stm = con.createStatement();
         stm.executeUpdate(req);
     }
 
     @Override
     public void update(Game game) throws SQLException {
-        String req = "UPDATE `game` SET " +
-            " `name` = '"+game.getName()+"', " +
-            " `description` = '"+game.getImage()+"', " +
-            " `image` = '"+game.getDescription()+"', " +
-            " `updated_at` = CURRENT_TIMESTAMP " +
-            "WHERE `id` = "+game.getId();
+        String req = "UPDATE `game` SET "
+                + " `name` = '" + game.getName() + "', "
+                + " `description` = '" + game.getDescription() + "', "
+                + " `image` = '" + game.getImage() + "', "
+                + " `updated_at` = CURRENT_TIMESTAMP "
+                + "WHERE `id` = " + game.getId();
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
+
+    public Game getGame(String gameName) throws SQLException {
+        String req = "Select * from `game` where name = '" + gameName + "'";
+        stm = con.createStatement();
+        ResultSet result = stm.executeQuery(req);
+        Game g = new Game();
+        while (result.next()) {
+            g = new Game(result.getInt("id"), result.getString("name"), result.getString("image"), result.getString("description"), result.getDate("created_at"), result.getDate("updated_at"));
+        }
+        return g;
+    }
+
+    public void deleteByName(String name) throws SQLException {
+        String req = "DELETE FROM `game` WHERE `name` = \"" + name + "\"; ";
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
+
+    public boolean getLike(int gameId) throws SQLException {
+        String req = "SELECT * FROM `game_user` WHERE `user_id` = " + Gamershub.loggedUser.getId() + " and `game_id` = " + gameId;
+        stm = con.createStatement();
+        ResultSet result = stm.executeQuery(req);
+        return result.next();
+    }
+    
+    public void addLike(int gameId) throws SQLException {
+        String req = "INSERT INTO `game_user`(`game_id`, `user_id`) VALUES ('"+gameId+"','"+Gamershub.loggedUser.getId()+"')";
         stm = con.createStatement();
         stm.executeUpdate(req);
     }
     
+    public void removeLike(int gameId) throws SQLException {
+        String req = "DELETE FROM `game_user` where game_id = '"+gameId+"' and user_id= '"+Gamershub.loggedUser.getId()+"'";
+        stm = con.createStatement();
+        stm.executeUpdate(req);
+    }
+    
+    public String getLikes(int gameId) throws SQLException {
+        String req = "SELECT count(*) FROM `game_user` WHERE `game_id` = " + gameId;
+        stm = con.createStatement();
+        ResultSet result = stm.executeQuery(req);
+        result.next();
+        return result.getString("count(*)");
+    }
 }

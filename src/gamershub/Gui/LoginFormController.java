@@ -5,6 +5,7 @@
  */
 package gamershub.Gui;
 
+import gamershub.Entities.User;
 import gamershub.Gamershub;
 import gamershub.Services.UserService;
 import java.io.IOException;
@@ -57,19 +58,45 @@ public class LoginFormController implements Initializable {
     @FXML
     private void loginClick(ActionEvent event) {
         UserService us = new UserService();
-        if (us.login(usernameField.getText(), passwordField.getText())) {
-            errorMsg.setText("");
-//            if (Gamershub.loggedUser.getRole().equals("[\"ROLE_ADMIN\"]")) {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
-                    Parent root = loader.load();
-                    usernameField.getScene().setRoot(root);
-                } catch (IOException ex) {
-                    Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+        if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
+            errorMsg.setText("All fields are required!");
+        } else if (us.login(usernameField.getText(), passwordField.getText())) {
+            if (Gamershub.loggedUser.getIsEnabled() == 0) {
+                errorMsg.setText("This account is banned!");
+                Gamershub.loggedUser = new User();
+            } else {
+                errorMsg.setText("");
+                if (Gamershub.loggedUser.getRole().equals("[\"ROLE_ADMIN\"]")) {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+                        Parent root = loader.load();
+                        usernameField.getScene().setRoot(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
+                        Parent root = loader.load();
+                        usernameField.getScene().setRoot(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-//            }
+            }
         } else {
             errorMsg.setText("Invalid credentials.");
+        }
+    }
+
+    @FXML
+    private void resetPassword(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ResetPasswordForm.fxml"));
+            Parent root = loader.load();
+            usernameField.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

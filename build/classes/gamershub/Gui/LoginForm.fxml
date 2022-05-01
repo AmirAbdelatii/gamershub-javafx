@@ -98,7 +98,7 @@
                               <Font name="Segoe UI Semibold" size="17.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#signUpClick" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Reset it" textFill="#00fadf">
+                        <Button mnemonicParsing="false" onAction="#resetPassword" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Reset it" textFill="#00fadf">
                            <font>
                               <Font name="Segoe UI Semibold" size="17.0" />
                            </font>
