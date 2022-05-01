@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="752.0" spacing="20.0" style="-fx-background-color: #05071F; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.ProductItemFormController">
+   <children>
+      <Label fx:id="productId" maxWidth="13.0" minWidth="13.0" text="KeepToo" textFill="#b7c3d7" />
+      <Label fx:id="categoryId" maxWidth="40.0" minWidth="40.0" text="JFK" textFill="#b7c3d7">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="productName" maxWidth="45.0" minWidth="45.0" text="10/11/2018" textFill="#b7c3d7">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <ImageView fx:id="image" fitHeight="40.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/banner-bg1.jpg" />
+         </image></ImageView>
+      <Label fx:id="price" maxWidth="28.0" minWidth="28.0" text="10/11/2018" textFill="#b7c3d7" />
+      <Label fx:id="quantity" maxWidth="48.0" minWidth="48.0" text="KeepToo" textFill="#b7c3d7" />
+      <Label fx:id="description" text="KeepToo" textFill="#b7c3d7" />
+      <Label fx:id="creationDate" maxWidth="64.0" minWidth="64.0" text="10/11/2018" textFill="#b7c3d7" />
+      <Label fx:id="modificationDate" maxWidth="85.0" minWidth="85.0" text="10/11/2018" textFill="#b7c3d7" />
+      <Label fx:id="isEnabled" maxWidth="54.0" minWidth="54.0" text="Label" textFill="#b7c3d7" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="64.0" spacing="20.0">
+         <children>
+            <ImageView fx:id="EditProduct" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditProductButton" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/edit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="deleteProduct" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#deleteProductButton" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/delete(1).png" />
+               </image>
+            </ImageView>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </HBox>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+   </effect>
+</HBox>

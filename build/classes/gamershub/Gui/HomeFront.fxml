@@ -41,8 +41,10 @@
                   </Button>
                   <MenuButton mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: transparent;" text="Shop" textFill="WHITE">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                        <MenuItem fx:id="btnCategories" mnemonicParsing="false" onAction="#handleClicks" text="Categories" />
+                        <MenuItem fx:id="productsbtn" mnemonicParsing="false" onAction="#handleClicks" text="products" />
+                        <MenuItem fx:id="btnCart" mnemonicParsing="false" onAction="#handleClicks" text="Cart" />
+                        <MenuItem fx:id="btnWishList" mnemonicParsing="false" onAction="#handleClicks" text="WishList" />
                      </items>
                      <font>
                         <Font size="18.0" />

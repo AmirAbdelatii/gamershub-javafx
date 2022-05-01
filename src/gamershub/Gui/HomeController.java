@@ -42,10 +42,6 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnGames;
     @FXML
-    private Button btnOrders;
-    @FXML
-    private Button btnPackages;
-    @FXML
     private Button btnSettings;
     @FXML
     private Button btnSignout;
@@ -59,6 +55,10 @@ public class HomeController implements Initializable {
     private Pane mainContent;
     @FXML
     private Button addBtn;
+    @FXML
+    private Button btnCategories;
+    @FXML
+    private Button btnProducts;
 
     /**
      * Initializes the controller class.
@@ -98,6 +98,30 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
+         else if (state.equals("Categories")) {
+            titleLabel.setText("Categories");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CategoriesContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+          else if (state.equals("Products")) {
+            titleLabel.setText("Products");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
     }
 
     @FXML
@@ -136,7 +160,31 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
 
-        } else {
+        }else if (event.getSource() == btnCategories) {
+            titleLabel.setText("Categories");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CategoriesContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        }
+         else if (event.getSource() == btnProducts) {
+            titleLabel.setText("Products");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          } else {
             System.out.println(event.getSource());
         }
     }
@@ -152,6 +200,33 @@ public class HomeController implements Initializable {
                 Parent root = loader.load();
                 GameEditFormController cont = loader.getController();
                 cont.setAdd();
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+          else if(titleLabel.getText().equals("Categories")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Category - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddCategory.fxml"));
+                Parent root = loader.load();
+                AddCategoryController cont = loader.getController();
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+          else if(titleLabel.getText().equals("Products")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Product - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddProduct.fxml"));
+                Parent root = loader.load();
+                AddProductController cont = loader.getController();
+                cont.setCombo();
                 mainContent.getChildren().add(root);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());

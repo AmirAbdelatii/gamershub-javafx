@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 
 /**
@@ -39,6 +40,14 @@ public class HomeFrontController implements Initializable {
     private Label title;
     @FXML
     private Pane content;
+    @FXML
+    private MenuItem btnCategories;
+    @FXML
+    private MenuItem productsbtn;
+    @FXML
+    private MenuItem btnCart;
+    @FXML
+    private MenuItem btnWishList;
 
     /**
      * Initializes the controller class.
@@ -74,6 +83,28 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+                  if(state == "Products"){
+                title.setText("Products");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsPageFront.fxml"));
+                Parent root = loader.load();
+                
+                content.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+          if(state == "Order-CheckOut"){
+                title.setText("Order-CheckOut");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderValidate.fxml"));
+                Parent root = loader.load();
+                
+                content.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     @FXML
@@ -107,6 +138,47 @@ public class HomeFrontController implements Initializable {
                 content.getScene().setRoot(root);
             } catch (IOException ex) {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+         if(event.getSource() == btnCategories){
+                title.setText("Categories");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CategoryPageFront.fxml"));
+                Parent categoryNode = loader.load();
+                content.getChildren().add(categoryNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           if(event.getSource() == productsbtn){
+                title.setText("Products");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsPageFront.fxml"));
+                Parent productNode = loader.load();
+                content.getChildren().add(productNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           
+               if(event.getSource() == btnCart){
+                title.setText("Cart");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CartPage.fxml"));
+                Parent cartNode = loader.load();
+                content.getChildren().add(cartNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CartPageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+              if(event.getSource() == btnWishList){
+                title.setText("Products I Liked ");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("WishListPage.fxml"));
+                Parent cartNode = loader.load();
+                content.getChildren().add(cartNode);
+            } catch (Exception ex) {
+                Logger.getLogger(WishListPageController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

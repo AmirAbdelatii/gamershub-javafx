@@ -6,6 +6,8 @@
 package gamershub;
 
 import gamershub.Entities.User;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,6 +24,7 @@ public class Gamershub extends Application {
      * @param args the command line arguments
      */
     public static User loggedUser = null;
+    public static Map<Integer, Integer> cartMap = new HashMap();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,9 +35,9 @@ public class Gamershub extends Application {
         primaryStage.setTitle("GamersHub");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
+
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
