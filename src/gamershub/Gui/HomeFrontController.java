@@ -69,7 +69,7 @@ public class HomeFrontController implements Initializable {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginForm.fxml"));
                 Parent root = loader.load();
-                content.getScene().setRoot(root);
+                this.title.getScene().setRoot(root);
             } catch (IOException ex) {
                 Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
             }

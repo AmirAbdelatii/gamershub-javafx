@@ -5,11 +5,7 @@
         <group>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GameDetailsController.java</file>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GameCardFrontController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GamesCardFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/HomeFrontController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GamesContentFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GameEditFormController.java</file>
-            <file>file:/D:/piJava/Gamershub/src/gamershub/Services/GameService.java</file>
+            <file>file:/D:/piJava/Gamershub/src/gamershub/Utils/BcryptHasher.java</file>
             <file>file:/D:/piJava/Gamershub/src/gamershub/Gui/GamesFrontController.java</file>
         </group>
     </open-files>

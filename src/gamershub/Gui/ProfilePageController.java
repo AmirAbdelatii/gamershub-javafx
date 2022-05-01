@@ -5,9 +5,15 @@
  */
 package gamershub.Gui;
 
+import gamershub.Entities.User;
 import gamershub.Gamershub;
+import gamershub.Services.UserService;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,6 +94,20 @@ public class ProfilePageController implements Initializable {
                 username.getScene().setRoot(homeRoot);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
+            }
+        }
+        if(event.getSource() == deleteAcc){
+            UserService us = new UserService();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginForm.fxml"));
+                Parent root = loader.load();
+                us.deleteByUsername(Gamershub.loggedUser.getUsername());
+                Gamershub.loggedUser = new User();
+                this.username.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginFormController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ProfilePageController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

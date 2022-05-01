@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -29,7 +30,7 @@ public class GameDetailsController implements Initializable {
     @FXML
     private ImageView image;
     @FXML
-    private TextArea description;
+    private Text description;
     @FXML
     private ImageView like;
     @FXML
@@ -37,6 +38,8 @@ public class GameDetailsController implements Initializable {
 
     private boolean isLiked;
     private int gameId;
+    @FXML
+    private TextArea description1;
 
     public void setImage(String url) {
         this.image.setImage(new Image(url));
