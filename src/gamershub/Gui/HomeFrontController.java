@@ -46,6 +46,8 @@ public class HomeFrontController implements Initializable {
     private MenuItem productsbtn;
     @FXML
     private MenuItem btnCart;
+    @FXML
+    private MenuItem btnWishList;
 
     /**
      * Initializes the controller class.
@@ -159,6 +161,16 @@ public class HomeFrontController implements Initializable {
                 content.getChildren().add(cartNode);
             } catch (Exception ex) {
                 Logger.getLogger(CartPageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+              if(event.getSource() == btnWishList){
+                title.setText("Products I Liked ");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("WishListPage.fxml"));
+                Parent cartNode = loader.load();
+                content.getChildren().add(cartNode);
+            } catch (Exception ex) {
+                Logger.getLogger(WishListPageController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

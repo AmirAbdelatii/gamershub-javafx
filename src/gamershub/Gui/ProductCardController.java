@@ -20,6 +20,9 @@ import gamershub.Services.WishListService;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.geometry.Pos;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -53,8 +56,8 @@ public class ProductCardController implements Initializable {
     public void setImage(String url) {
         this.image.setImage(new Image(url, 209, 114, false, false));
     }
-    
-     public void setWishList(String url) {
+
+    public void setWishList(String url) {
         this.wishlistIcon.setImage(new Image(url, 32, 32, false, false));
     }
 
@@ -75,11 +78,18 @@ public class ProductCardController implements Initializable {
     private void addProductToCart(MouseEvent event) {
         int qt = 0;
         if (cartMap.containsKey(Integer.parseInt(prodId.getText()))) {
-            qt = cartMap.get(Integer.parseInt(prodId.getText()));       
+            qt = cartMap.get(Integer.parseInt(prodId.getText()));
             cartMap.put(Integer.parseInt(prodId.getText()), qt + 1);
+             Notifications notfBuilder = Notifications.create().title("Quantity Ordered increased")
+                    .hideAfter(Duration.seconds(3)).position(Pos.TOP_RIGHT);
+            notfBuilder.show();
         } else {
             cartMap.put(Integer.parseInt(prodId.getText()), 1);
             System.out.print(cartMap.keySet());
+
+            Notifications notfBuilder = Notifications.create().title("Item added to Cart")
+                    .hideAfter(Duration.seconds(3)).position(Pos.TOP_RIGHT);
+            notfBuilder.show();
         }
 
     }
@@ -87,24 +97,20 @@ public class ProductCardController implements Initializable {
     @FXML
     private void addRemove(MouseEvent event) {
         try {
-            String img="http://127.0.0.1:8000/shop/images/";
-            WishListService ws=new WishListService();
-            if( ws.afficher().contains(Integer.parseInt(prodId.getText()))){
+            String img = "http://127.0.0.1:8000/shop/images/";
+            WishListService ws = new WishListService();
+            if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
-               wishlistIcon.setImage(new Image(img+"empty.png", 32, 32, false, false));
+                wishlistIcon.setImage(new Image(img + "empty.png", 32, 32, false, false));
+            } else {
+                ws.add(Integer.parseInt(prodId.getText()), loggedUser.getId());
+                wishlistIcon.setImage(new Image(img + "full.png", 32, 32, false, false));
             }
-            else{
-                ws.add(Integer.parseInt(prodId.getText()),loggedUser.getId());
-                 wishlistIcon.setImage(new Image(img+"full.png", 32, 32, false, false));
-            }
-                  
-                } catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             Logger.getLogger(ProductCardController.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-        
-        
-        
+
     }
 
 }

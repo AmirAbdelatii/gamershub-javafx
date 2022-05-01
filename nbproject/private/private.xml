@@ -4,12 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/HomeFrontController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Entities/Order.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/WishListPage.fxml</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Services/WishListService.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/WishListCard.fxml</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/WishListCardController.java</file>
             <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Services/OrderService.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CartItemController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/CartPageController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/OrderValidate.fxml</file>
-            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/OrderValidateController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Services/ProductsService.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/ProductsPageFrontController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/WishListPageController.java</file>
+            <file>file:/C:/Users/meriam/Desktop/java_Desktop/src/gamershub/Gui/ProductCardController.java</file>
         </group>
     </open-files>
 </project-private>
