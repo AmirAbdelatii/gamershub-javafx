@@ -42,8 +42,6 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnGames;
     @FXML
-    private Button btnSettings;
-    @FXML
     private Button btnSignout;
     @FXML
     private ImageView userImage;
@@ -59,6 +57,12 @@ public class HomeController implements Initializable {
     private Button btnCategories;
     @FXML
     private Button btnProducts;
+    @FXML
+    private Button btnMatch;
+    @FXML
+    private Button btnTeam;
+    @FXML
+    private Button btnStatitics;
 
     /**
      * Initializes the controller class.
@@ -115,6 +119,30 @@ public class HomeController implements Initializable {
             addBtn.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductsContentForm.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+        else if (state.equals("Matchs")) {
+            titleLabel.setText("Matchs");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchListBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+        else if (state.equals("Teams")) {
+            titleLabel.setText("Teams");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamListBack.fxml"));
                 Parent root = loader.load();
                 mainContent.getChildren().add(root);
 
@@ -184,9 +212,46 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-          } else {
+          } 
+         else if (event.getSource() == btnMatch) {
+            titleLabel.setText("Matchs");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchListBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+         else if (event.getSource() == btnTeam) {
+            titleLabel.setText("Teams");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamListBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+          else if (event.getSource() == btnStatitics) {
+            titleLabel.setText("Statitcs");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("statics.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }else {
             System.out.println(event.getSource());
         }
+        
     }
 
     @FXML
@@ -231,6 +296,77 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
+        }
+        else if(titleLabel.getText().equals("Matchs")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Match - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddMatch.fxml"));
+                Parent root = loader.load();
+                AddMatchController cont = loader.getController();
+                
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        else if(titleLabel.getText().equals("Teams")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Team - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTeam.fxml"));
+                Parent root = loader.load();
+                AddTeamController cont = loader.getController();
+                
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        
+    }
+
+    @FXML
+    private void showMatchs(ActionEvent event) {
+          try {
+           
+           
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchListBack.fxml"));
+            Parent root = loader.load();
+            btnMatch.getScene().setRoot(root);
+           
+        } catch (IOException ex) {
+            Logger.getLogger(MatchListBackController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void showTeams(ActionEvent event) {
+        try {
+           
+           
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamListBack.fxml"));
+            Parent root = loader.load();
+            btnTeam.getScene().setRoot(root);
+           
+        } catch (IOException ex) {
+            Logger.getLogger(MatchListBackController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void showStatitcs(ActionEvent event) {
+         try {
+           
+           
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("statics.fxml"));
+            Parent root = loader.load();
+            //addTeamButton.getScene().setRoot(root);
+           
+        } catch (IOException ex) {
+            Logger.getLogger(MatchListBackController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
