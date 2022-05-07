@@ -7,7 +7,7 @@ package gamershub.Gui;
 
 
 import Entities.Teams;
-import Entities.Matchs;
+import gamershub.Entities.Matchs;
 
 import gamershub.Services.TeamService;
 import gamershub.Services.MatchService;

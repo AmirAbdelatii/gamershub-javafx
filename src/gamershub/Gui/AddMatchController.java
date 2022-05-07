@@ -6,7 +6,7 @@
 package gamershub.Gui;
 
 
-import Entities.Matchs;
+import gamershub.Entities.Matchs;
 
 import gamershub.Services.MatchService;
 import java.io.IOException;

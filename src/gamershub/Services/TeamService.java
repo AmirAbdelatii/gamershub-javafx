@@ -40,15 +40,15 @@ public class TeamService implements InterfaceTeam{
     public void createTeam(Teams p) {
         
         //request
-        String req = "INSERT INTO `teams`(`id`,`team_name`, `gamers_nb`, `rank`, `verified`, `image`) VALUES (?,?,?,?,?,?)";
+        String req = "INSERT INTO `teams`(`team_name`, `gamers_nb`, `rank`, `verified`, `image`) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement st = cnx.prepareStatement(req);
-            st.setInt(1, p.getId());
-            st.setString(2, p.getTeamName());
-            st.setInt(3, p.getGamersNb());
-            st.setInt(4, p.getRank());
-            st.setBoolean(5, p.getIsVerified());
-            st.setString(6, p.getImage());
+            //st.setInt(1, p.getId());
+            st.setString(1, p.getTeamName());
+            st.setInt(2, p.getGamersNb());
+            st.setInt(3, p.getRank());
+            st.setBoolean(4, false);
+            st.setString(5,"null");
             st.executeUpdate();
             System.out.println("Team ajouté avec succes.");
             

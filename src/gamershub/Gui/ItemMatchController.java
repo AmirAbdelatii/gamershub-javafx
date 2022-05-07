@@ -6,7 +6,7 @@
 package gamershub.Gui;
 
 import Entities.Category;
-import Entities.Matchs;
+import gamershub.Entities.Matchs;
 
 
 import gamershub.Services.MatchService;

@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package gamershub.Services;
-import Services.InterfaceMatch;
+import gamershub.Services.InterfaceMatch;
 
-import Entities.Matchs;
+import gamershub.Entities.Matchs;
 import gamershub.Utils.MyDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,17 +28,17 @@ public class MatchService implements InterfaceMatch{
      *
      * @param p
      */
-    @Override
     public void createMatch(Matchs p) {
         
         //request
-        String req = "INSERT INTO `matchs`(`id`,`match_date`,`result`,`match_name`) VALUES (?,?,?,?)";
+        String req = "INSERT INTO `matchs`(`match_date`,`result`,`match_name`) VALUES (Now(),?,?)";
         try {
             PreparedStatement st = cnx.prepareStatement(req);
-            st.setInt(1, p.getId());
-            st.setString(4, p.getMatchName());
-            st.setDate(2, p.getMatchDate());
-            st.setInt(3, p.getResult());
+            //st.setInt(1, p.getId());
+            st.setString(2, p.getMatchName());
+            System.out.print("hh"+ p.getMatchDate());
+            //st.setDate(1, p.getMatchDate());
+            st.setInt(1, p.getResult());
             st.executeUpdate();
             System.out.println("Match ajouté avec succes.");
             
@@ -50,7 +50,7 @@ public class MatchService implements InterfaceMatch{
         
     }
 
-    @Override
+
     public List<Matchs> readMatch() {
         ArrayList<Matchs> Matchs = new ArrayList();
         
@@ -71,7 +71,7 @@ public class MatchService implements InterfaceMatch{
         
         return Matchs;
     }
-    @Override
+
     public void deleteMatch(Matchs m) {
         String query = "DELETE FROM matchs WHERE id= " + m.getId() + "";
         try{
@@ -90,7 +90,7 @@ public class MatchService implements InterfaceMatch{
         pstm.executeUpdate();
 
     }
-    @Override
+
     public void modifyMatch(Matchs m) {
          String query = "UPDATE matchs SET match_name = '" + m.getMatchName() +
                  "',result = '" + m.getResult() +"' WHERE id = " + m.getId() + "";       
