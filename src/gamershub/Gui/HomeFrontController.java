@@ -48,6 +48,10 @@ public class HomeFrontController implements Initializable {
     private MenuItem btnCart;
     @FXML
     private MenuItem btnWishList;
+    @FXML
+    private MenuItem btncoachs;
+    @FXML
+    private MenuItem btnsession;
 
     /**
      * Initializes the controller class.
@@ -103,6 +107,26 @@ public class HomeFrontController implements Initializable {
                 content.getScene().setRoot(root);
             } catch (IOException ex) {
                 Logger.getLogger(ProductsPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+          if(state == "Coachs"){
+              title.setText("Coachs");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("CoachContent.fxml"));
+                Parent profileNode = profileLoader.load();
+                content.getChildren().add(profileNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           if(state == "btnsession"){
+              title.setText("Session Coaching");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("SessionContent.fxml"));
+                Parent profileNode = profileLoader.load();
+                content.getChildren().add(profileNode);
+            } catch (Exception ex) {
+                Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -179,6 +203,26 @@ public class HomeFrontController implements Initializable {
                 content.getChildren().add(cartNode);
             } catch (Exception ex) {
                 Logger.getLogger(WishListPageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+              if(event.getSource() == btncoachs){
+                title.setText("Coachs");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachContent.fxml"));
+                Parent coachNode = loader.load();
+                content.getChildren().add(coachNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+              if(event.getSource() == btnsession){
+                title.setText("Session coaching");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SessionContent.fxml"));
+                Parent coachNode = loader.load();
+                content.getChildren().add(coachNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

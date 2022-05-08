@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="1203.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.SessionContentController">
+   <children>
+      <ScrollPane layoutX="197.0" prefHeight="497.0" prefWidth="1006.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <FlowPane fx:id="content" prefHeight="498.0" prefWidth="999.0" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnaddsession" layoutX="14.0" layoutY="103.0" mnemonicParsing="false" onAction="#AddSession" prefHeight="46.0" prefWidth="172.0" style="-fx-background-color: #F0882F; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Add new session" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

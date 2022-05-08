@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<ScrollPane prefHeight="530.0" prefWidth="832.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.SessionbackController">
+   <content>
+      <FlowPane fx:id="content" prefHeight="528.0" prefWidth="832.0" />
+   </content>
+</ScrollPane>

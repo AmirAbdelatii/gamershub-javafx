@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/meriam/Desktop/java-master/src/gamershub/Gui/MatchListBackController.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java-master/src/gamershub/Services/InterfaceMatch.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java-master/src/gamershub/Services/TeamService.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java-master/src/gamershub/Services/MatchService.java</file>
-            <file>file:/C:/Users/meriam/Desktop/java-master/src/gamershub/Gui/MenuBackController.java</file>
+            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/HomeController.java</file>
+            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/SessionContentController.java</file>
+            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/CoachContentController.java</file>
+            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/CoachitemController.java</file>
         </group>
     </open-files>
 </project-private>

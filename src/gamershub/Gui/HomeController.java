@@ -63,6 +63,10 @@ public class HomeController implements Initializable {
     private Button btnTeam;
     @FXML
     private Button btnStatitics;
+    @FXML
+    private Button btncoach;
+    @FXML
+    private Button btnsession;
 
     /**
      * Initializes the controller class.
@@ -143,6 +147,30 @@ public class HomeController implements Initializable {
             addBtn.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamListBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+        else if (state.equals("Coachs")) {
+            titleLabel.setText("Coachs");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Coachback.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+        else if (state.equals("btsession")) {
+            titleLabel.setText("Coaching Session");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Sessionback.fxml"));
                 Parent root = loader.load();
                 mainContent.getChildren().add(root);
 
@@ -248,7 +276,33 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-          }else {
+          }
+          else if (event.getSource() == btncoach) {
+             System.out.println("hhhh");
+            titleLabel.setText("Coachs");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Coachback.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        }
+          else if (event.getSource() == btnsession) {
+            titleLabel.setText("Coaching Session");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Sessionback.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        }
+          else {
             System.out.println(event.getSource());
         }
         
@@ -328,7 +382,6 @@ public class HomeController implements Initializable {
         
     }
 
-    @FXML
     private void showMatchs(ActionEvent event) {
           try {
            
@@ -342,7 +395,6 @@ public class HomeController implements Initializable {
         }
     }
 
-    @FXML
     private void showTeams(ActionEvent event) {
         try {
            
@@ -356,7 +408,6 @@ public class HomeController implements Initializable {
         }
     }
 
-    @FXML
     private void showStatitcs(ActionEvent event) {
          try {
            
