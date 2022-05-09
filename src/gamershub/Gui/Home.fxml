@@ -14,11 +14,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeController">
    <children>
       <StackPane layoutX="258.0" prefHeight="670.0" prefWidth="945.0" style="-fx-background-color: #02030A;">
          <children>
-            <Pane prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:C:/Users/LENOVO/Downloads/gamershub-javafx-master/src/gamershub/images/banner-bg1.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
+            <Pane prefHeight="717.0" prefWidth="945.0" style="-fx-background-image: url('file:/D:/piJava/Gamershub/src/gamershub/images/banner-bg1.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
                <children>
                   <Label fx:id="titleLabel" layoutX="63.0" layoutY="47.0" text="Title" textFill="#f8f8f8">
                      <font>
@@ -186,7 +186,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../feljdid/testlivreur/testlivreur/src/images/icons8_Person_32px.png" />
+                              <Image url="@../images/icons8_Person_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -198,7 +198,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../feljdid/testlivreur/testlivreur/src/images/icons8_Open_Envelope_32px.png" />
+                              <Image url="@../images/icons8_Open_Envelope_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>

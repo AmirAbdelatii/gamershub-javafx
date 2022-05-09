@@ -167,7 +167,7 @@ public class AddCategoryController implements Initializable {
            String fileName = sb.toString();
 
             File source = file;
-            File dest = new File("C:\\Users\\meriam\\Desktop\\webVersionFinal\\public\\shop\\images\\" + fileName + ".png");
+            File dest = new File("C:\\Users\\bouza\\OneDrive\\Bureau\\nour merge\\public\\shop\\images\\" + fileName + ".png");
 
             try {
                 Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
