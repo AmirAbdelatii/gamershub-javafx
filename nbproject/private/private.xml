@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/HomeController.java</file>
-            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/SessionContentController.java</file>
-            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/CoachContentController.java</file>
-            <file>file:/C:/Users/hp/Desktop/merge%20meriem/src/gamershub/Gui/CoachitemController.java</file>
+            <file>file:/D:/integration/src/gamershub/Gui/StatRecController.java</file>
+            <file>file:/D:/integration/src/gamershub/Gui/FXMLLivraisonController.java</file>
+            <file>file:/D:/integration/src/gamershub/Gui/StatRec.fxml</file>
         </group>
     </open-files>
 </project-private>

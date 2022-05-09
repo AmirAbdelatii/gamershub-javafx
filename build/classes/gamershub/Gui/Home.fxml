@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.HomeController">
    <children>
       <StackPane layoutX="258.0" prefHeight="670.0" prefWidth="945.0" style="-fx-background-color: #02030A;">
          <children>
@@ -175,6 +175,30 @@
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/icons8-evénement-accepté-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnlivreur" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#LivreurScene" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Livreur">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../feljdid/testlivreur/testlivreur/src/images/icons8_Person_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnlivraison" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#LivraisonScene" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Livraison">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../feljdid/testlivreur/testlivreur/src/images/icons8_Open_Envelope_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>

@@ -19,12 +19,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -67,6 +69,10 @@ public class HomeController implements Initializable {
     private Button btncoach;
     @FXML
     private Button btnsession;
+    @FXML
+    private Button btnlivreur;
+    @FXML
+    private Button btnlivraison;
 
     /**
      * Initializes the controller class.
@@ -178,6 +184,7 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
           }
+        
     }
 
     @FXML
@@ -380,6 +387,7 @@ public class HomeController implements Initializable {
             }
         }
         
+       
     }
 
     private void showMatchs(ActionEvent event) {
@@ -420,5 +428,21 @@ public class HomeController implements Initializable {
             Logger.getLogger(MatchListBackController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+@FXML
+    private void LivreurScene(ActionEvent event) throws IOException {
+        Parent view3=FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+                Scene scene3=new Scene(view3);
+                Stage window =new Stage();
+                window.setScene(scene3);
+                window.show();
+    }
+    
+    @FXML
+    private void LivraisonScene(ActionEvent event) throws IOException {
+        Parent view3=FXMLLoader.load(getClass().getResource("livraison.fxml"));
+                Scene scene3=new Scene(view3);
+                Stage window =new Stage();
+                window.setScene(scene3);
+                window.show();
+    }
 }
