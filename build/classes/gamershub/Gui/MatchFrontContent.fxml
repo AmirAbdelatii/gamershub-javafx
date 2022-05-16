@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="603.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.MatchFrontContentController">
+   <children>
+      <ScrollPane prefHeight="603.0" prefWidth="912.0">
+         <content>
+            <VBox fx:id="mainVBox" prefHeight="600.0" prefWidth="912.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

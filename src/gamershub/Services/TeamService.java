@@ -7,7 +7,7 @@ package gamershub.Services;
 import Entities.Products;
 import gamershub.Services.InterfaceTeam;
 
-import Entities.Teams;
+import gamershub.Entities.Teams;
 import gamershub.Utils.MyDB;
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -73,6 +73,18 @@ public class HomeController implements Initializable {
     private Button btnlivreur;
     @FXML
     private Button btnlivraison;
+    @FXML
+    private Button btnTour;
+    @FXML
+    private Button btnReward;
+    @FXML
+    private Button btnBlog;
+    @FXML
+    private Button btnComments;
+    @FXML
+    private Button btnSpam;
+    @FXML
+    private Button btnPlayers;
 
     /**
      * Initializes the controller class.
@@ -160,6 +172,30 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
           }
+         else if (state.equals("Tournaments")) {
+            titleLabel.setText("Tournaments");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Tournament.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
+          else if (state.equals("Rewards")) {
+            titleLabel.setText("Rewards");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Reward.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+          }
         else if (state.equals("Coachs")) {
             titleLabel.setText("Coachs");
             addBtn.setVisible(true);
@@ -221,9 +257,82 @@ public class HomeController implements Initializable {
 
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
-            }
+            } 
+ 
+        }else if (event.getSource() == btnTour) {
+            titleLabel.setText("Tournaments");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Tournament.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
 
-        }else if (event.getSource() == btnCategories) {
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }else if (event.getSource() == btnReward) {
+            titleLabel.setText("Rewards");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Reward.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }else if (event.getSource() == btnBlog) {
+            titleLabel.setText("Forum");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListBlogBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }else if (event.getSource() == btnComments) {
+            titleLabel.setText("Comments");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListCommentsBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }else if (event.getSource() == btnSpam) {
+            titleLabel.setText("Spam");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SpamBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }else if (event.getSource() == btnPlayers) {
+            titleLabel.setText("Forum");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListPlayerBack.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            } 
+ 
+        }
+        else if (event.getSource() == btnCategories) {
             titleLabel.setText("Categories");
             addBtn.setVisible(true);
             try {
@@ -366,6 +475,34 @@ public class HomeController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AddMatch.fxml"));
                 Parent root = loader.load();
                 AddMatchController cont = loader.getController();
+                
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        else if(titleLabel.getText().equals("Tournaments")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Tournament - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTournament.fxml"));
+                Parent root = loader.load();
+                AddTournamentController cont = loader.getController();
+                
+                mainContent.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        else if(titleLabel.getText().equals("Rewards")){
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            titleLabel.setText("Reward - Add");
+            addBtn.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddReward.fxml"));
+                Parent root = loader.load();
+                AddRewardController cont = loader.getController();
                 
                 mainContent.getChildren().add(root);
             } catch (Exception ex) {

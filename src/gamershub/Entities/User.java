@@ -16,6 +16,10 @@ public class User {
     private int id, isEnabled, coins, isVerified, oauth;
     private String username, password, role, email, name, secondName;
     private Date createdAt,lastUpdated,birthDate;
+    
+    public User(int id) {
+        this.id = id;
+    }
 
     public User(int id, String username, String password, String role, int isEnabled, int coins, int isVerified, int oauth, String email, String name, String secondName, Date createdAt, Date lastUpdated, Date birthDate) {
         this.id = id;

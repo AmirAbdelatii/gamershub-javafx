@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.ModifierTournamentController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Pane layoutX="314.0" layoutY="114.0" prefHeight="526.0" prefWidth="723.0" style="-fx-background-color: #4609C3; -fx-background-radius: 10px;" />
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1203.0" style="-fx-background-color: #000000;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0">
+                     <children>
+                        <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="1330.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <ComboBox fx:id="combo_id" onMouseClicked="#getId" prefWidth="150.0" />
+                        <Label text="Name" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="12.0" left="2.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Semibold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_name" minWidth="91.0" prefHeight="38.0" prefWidth="91.0" promptText="Name" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: #000000; -fx-min-width: 620px;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="350.0" right="350.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox layoutX="360.0" layoutY="224.0" style="-fx-min-width: 620px;">
+                     <children>
+                        <Label text="Description" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="12.0" left="2.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Semibold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_description" promptText="Description" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-text-fill: #000000;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="350.0" right="350.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <VBox>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label text="Team Size" textFill="#f8f8f8">
+                                 <padding>
+                                    <Insets bottom="12.0" left="2.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="tf_teamsize" promptText="Team Size" />
+                              <Label text="Max Team" textFill="#f8f8f8">
+                                 <padding>
+                                    <Insets bottom="12.0" left="2.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tf_maxteam" promptText="Max Team" />
+                              <Label text="Images" textFill="#f8f8f8">
+                                 <padding>
+                                    <Insets bottom="12.0" left="2.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tf_images" promptText="Images" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" />
+                        <Label text="Start Date" textFill="#f8f8f8">
+                           <padding>
+                              <Insets bottom="12.0" left="2.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Semibold" size="17.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="startDate" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="64.0" prefWidth="1203.0">
+                     <children>
+                        <Label text="End Date" textFill="#f8f8f8">
+                           <padding>
+                              <Insets bottom="12.0" left="2.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Semibold" size="17.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="endDate" />
+                        <Label fx:id="errorMsg" textFill="#fc7676">
+                           <font>
+                              <Font name="Segoe UI" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button id="loginBtn" mnemonicParsing="false" onAction="#modifierTournament" style="-fx-padding: 9px; -fx-pref-width: 416px; -fx-background-color: #FFFFFF; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand;" text="Update" textFill="#eb8a28">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Segoe UI Semibold" size="17.0" />
+                           </font>
+                        </Button>
+                        <HBox alignment="CENTER" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

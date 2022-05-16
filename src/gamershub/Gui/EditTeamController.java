@@ -7,7 +7,7 @@ package gamershub.Gui;
 
 import Entities.Category;
 import Entities.Products;
-import Entities.Teams;
+import gamershub.Entities.Teams;
 
 import gamershub.Services.TeamService;
 import java.io.IOException;

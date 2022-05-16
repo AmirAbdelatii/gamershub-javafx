@@ -182,6 +182,78 @@
                         <Insets left="50.0" />
                      </padding>
                   </Button>
+                  <Button fx:id="btnTour" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Tournaments">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-controller-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnReward" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Rewards">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/product.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnBlog" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Forum">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-bavarder-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnComments" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Comments">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-commentaires-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnSpam" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Spam">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-spam-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnPlayers" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Players">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-player-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
                   <Button fx:id="btnlivreur" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#LivreurScene" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Livreur">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">

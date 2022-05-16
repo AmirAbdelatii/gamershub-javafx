@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="1088.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="314.0" prefWidth="1088.0">
+         <children>
+            <HBox prefHeight="70.0" prefWidth="1053.0">
+               <children>
+                  <ImageView fx:id="userImage" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/jimmy-fallon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fx:id="username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="151.9830722808838">
+                     <HBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <TextFlow prefHeight="203.0" prefWidth="1028.0" style="-fx-background-color: #4609C3; -fx-background-radius: 10px;">
+               <children>
+                  <Text fx:id="post" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="40.0" />
+               </VBox.margin>
+            </TextFlow>
+            <HBox prefHeight="45.0" prefWidth="1088.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text fx:id="views" fill="WHITE" layoutX="20.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Views" />
+                     </children></Pane>
+                  <Pane prefHeight="47.0" prefWidth="638.0" />
+                  <Button fx:id="comments" mnemonicParsing="false" style="-fx-background-color: #F0882F; -fx-padding: 9px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand; -fx-pref-width: 90px;" text="Comments">
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="spam1" mnemonicParsing="false" style="-fx-background-color: #F0882F; -fx-padding: 9px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand; -fx-pref-width: 90px;" text="Report">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="40.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

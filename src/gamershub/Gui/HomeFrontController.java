@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package gamershub.Gui;
-
 import gamershub.Entities.User;
 import gamershub.Gamershub;
 import gamershub.Services.UserService;
@@ -52,6 +51,14 @@ public class HomeFrontController implements Initializable {
     private MenuItem btncoachs;
     @FXML
     private MenuItem btnsession;
+    @FXML
+    private MenuItem btnTeam;
+    @FXML
+    private MenuItem btnMatch;
+    @FXML
+    private MenuItem blog;
+    @FXML
+    private MenuItem player;
 
     /**
      * Initializes the controller class.
@@ -129,6 +136,17 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(ProfileEditFormController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+           if(state == "blog"){
+            title.setText("FORUM");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("BlogFormContent.fxml"));
+                Parent root = profileLoader.load();
+                content.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+           
     }
 
     @FXML
@@ -223,6 +241,46 @@ public class HomeFrontController implements Initializable {
                 content.getChildren().add(coachNode);
             } catch (Exception ex) {
                 Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                 if(event.getSource() == btnTeam){
+                title.setText("Teams");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamFrontContent.fxml"));
+                Parent coachNode = loader.load();
+                content.getChildren().add(coachNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                       if(event.getSource() == btnMatch){
+                title.setText("Matchs");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchFrontContent.fxml"));
+                Parent coachNode = loader.load();
+                content.getChildren().add(coachNode);
+            } catch (Exception ex) {
+                Logger.getLogger(CategoryPageFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                               if(event.getSource() == blog){
+            title.setText("FORUM");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("BlogFormContent.fxml"));
+                Parent root = profileLoader.load();
+                content.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        if(event.getSource() == player){
+            title.setText("Become a player");
+            try {
+                FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("BecomePlayerForm.fxml"));
+                Parent root = profileLoader.load();
+                content.getChildren().add(root);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
             }
         }
     }

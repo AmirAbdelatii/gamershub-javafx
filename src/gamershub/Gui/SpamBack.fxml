@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.SpamBackController">
+   <children>
+      <ListView fx:id="tableSpam" layoutX="83.0" layoutY="74.0" prefHeight="372.0" prefWidth="705.0" />
+      <Button fx:id="btnDeleteSpam" layoutX="111.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteSpam" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15px; -fx-border-radius: 15px; -fx-cursor: hand;" text="Keep Post" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnKeepPost" layoutX="601.0" layoutY="473.0" mnemonicParsing="false" onAction="#keepPost" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Delete Post" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

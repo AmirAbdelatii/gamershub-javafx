@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="558.0" prefWidth="605.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.AddRewardController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="29.0" prefHeight="531.0" prefWidth="552.0" style="-fx-background-color: #060928; -fx-background-radius: 3em;">
+         <children>
+            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="-42.0" layoutY="25.0" prefHeight="570.0" prefWidth="592.0" spacing="30.0">
+               <children>
+                  <ComboBox fx:id="combo_tid" prefWidth="150.0" />
+                  <TextField fx:id="tf_type" prefHeight="35.0" prefWidth="237.0" promptText="tf_type" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;" text="type">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <HBox prefHeight="39.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="tf_quantity" prefHeight="37.0" prefWidth="244.0" promptText="tf_quantity" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;" text="quantity">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                     </children></HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button lineSpacing="3.0" mnemonicParsing="false" onAction="#ajouterReward" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Ajouter" textFill="#e7e5e5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="cancel" alignment="TOP_CENTER" lineSpacing="3.0" mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #6610f2; -fx-background-radius: 2em; -fx-cursor: hand;" text="cancel" textAlignment="RIGHT" textFill="#e7e5e5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="42.0" prefWidth="195.0" spacing="20.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

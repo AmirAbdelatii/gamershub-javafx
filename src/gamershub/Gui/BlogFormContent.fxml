@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="1203.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.BlogFormContentController">
+   <children>
+      <Button fx:id="btnAddPost" layoutX="1099.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: #F0882F; -fx-padding: 9px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-cursor: hand; -fx-pref-width: 90px;" text="Write post" />
+      <VBox fx:id="content" layoutX="14.0" layoutY="20.0" prefHeight="362.0" prefWidth="1046.0" />
+   </children>
+</AnchorPane>

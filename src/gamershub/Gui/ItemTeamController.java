@@ -6,7 +6,7 @@
 package gamershub.Gui;
 
 
-import Entities.Teams;
+import gamershub.Entities.Teams;
 
 import gamershub.Services.TeamService;
 import java.io.File;

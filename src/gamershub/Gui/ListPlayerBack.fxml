@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.ListPlayerBackController">
+   <children>
+      <ListView fx:id="tablePlayer" layoutX="83.0" layoutY="74.0" prefHeight="372.0" prefWidth="705.0" />
+      <Button layoutX="122.0" layoutY="461.0" mnemonicParsing="false" onAction="#deletePlayer" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Delete Player" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdatePlayer" layoutX="534.0" layoutY="461.0" mnemonicParsing="false" onAction="#updatePlayer" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Update Player" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBecomePlayer" layoutX="331.0" layoutY="461.0" mnemonicParsing="false" onAction="#becomePlayer" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Become a player" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

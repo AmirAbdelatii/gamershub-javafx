@@ -5,7 +5,7 @@
  */
 package gamershub.Services;
 import java.util.List;
-import Entities.Teams;
+import gamershub.Entities.Teams;
 /**
  *
  * @author user

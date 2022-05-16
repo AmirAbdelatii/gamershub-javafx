@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gamershub.Gui.ListCommentsBackController">
+   <children>
+      <Button layoutX="101.0" layoutY="463.0" mnemonicParsing="false" onAction="#deleteComments" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15px; -fx-border-radius: 15px; -fx-cursor: hand;" text="Delete Comment" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdateComments" layoutX="574.0" layoutY="463.0" mnemonicParsing="false" onAction="#updateComments" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: #F0882F; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Update Comment" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="17.0" />
+         </font>
+      </Button>
+      <ListView fx:id="tableComments" layoutX="83.0" layoutY="74.0" prefHeight="372.0" prefWidth="705.0" />
+   </children>
+</AnchorPane>
